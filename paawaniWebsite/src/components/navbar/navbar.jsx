@@ -4,7 +4,6 @@ import logo from "../../assets/Logo2.svg";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-
 const navbar = () => {
   const navitems = [
     { name: "About Us", id: "about", link: "/about" },
@@ -14,17 +13,17 @@ const navbar = () => {
     { name: "Be Our Partner", id: "partner", link: "/about" },
   ];
 
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -35,16 +34,27 @@ const navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled
-        ? 'glass-effect shadow-lg border-b border-light-grey'
-        : 'glass-effect'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "glass-effect shadow-lg border-b border-light-grey"
+          : "glass-effect"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-4">
-            <img src={logo} alt="Paawani Logo" className="logo w-[2rem] lg:w-[4rem]" />
-            <a href="/" className="font-heading text-2xl lg:text-3xl font-bold text-primary">Paawani Group</a>
+            <img
+              src={logo}
+              alt="Paawani Logo"
+              className="logo w-[2rem] lg:w-[4rem]"
+            />
+            <a
+              href="/"
+              className="font-heading text-2xl lg:text-3xl font-bold text-primary"
+            >
+              Paawani Group
+            </a>
             {/* <h1 className="font-heading text-2xl lg:text-3xl font-bold text-primary">
               Paawani Group
             </h1> */}
@@ -75,10 +85,10 @@ const navbar = () => {
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setIsMobileMenuOpen(!setIsMobileMenuOpen)}
-            className="text-charcoal hover:text-primary hover:bg-primary/10"
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-charcoal hover:text-primary hover:bg-primary/10"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -102,6 +112,12 @@ const navbar = () => {
                   {item.name}
                 </button>
               ))}
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                Contact Us
+              </Button>
             </div>
           </div>
         )}
