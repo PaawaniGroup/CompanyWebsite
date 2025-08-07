@@ -43,7 +43,7 @@ const navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-4">
-            <img src={logo} alt="Paawani Logo" className="logo w-[4rem]" />
+            <img src={logo} alt="Paawani Logo" className="logo w-[2rem] lg:w-[4rem]" />
             <a href="/" className="font-heading text-2xl lg:text-3xl font-bold text-primary">Paawani Group</a>
             {/* <h1 className="font-heading text-2xl lg:text-3xl font-bold text-primary">
               Paawani Group
@@ -51,8 +51,8 @@ const navbar = () => {
           </div>
 
           {/* Desktop Navbar */}
-          <div className="hidden lg:block lg:items-center">
-            <div className="nav-items ml-10 flex items-center space-x-8">
+          <div className="hidden lg:flex">
+            <div className="nav-items mx-10 flex items-center space-x-6">
               {navitems.map((item) => (
                 <button
                   key={item.id}
