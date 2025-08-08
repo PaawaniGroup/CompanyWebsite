@@ -139,7 +139,7 @@ const hero = () => {
 
   return (
     <section
-      className="relative max-h-fit bg-background overflow-hidden mt-20"
+      className="relative max-h-screen bg-background overflow-hidden mt-20"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -154,7 +154,7 @@ const hero = () => {
           variant="outline"
           size="icon"
           onClick={prevSlide}
-          className="glass-effect border-primary/20 hover:bg=primary hover:text-white shadow-lg pointer-events-auto opacity-0 hover:opacity-100 transition-all duration-300 w-12 h-12"
+          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12"
         >
           <ChevronLeft className="h-6 w-6" />
         </Button>
@@ -162,7 +162,7 @@ const hero = () => {
           variant="outline"
           size="icon"
           onClick={nextSlide}
-          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-0 hover:opacity-100 transition-all duration-300 w-12 h-12"
+          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>
@@ -170,7 +170,7 @@ const hero = () => {
 
       {/* Slide Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
-        {slides.map((_, index) => {
+        {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
@@ -179,8 +179,8 @@ const hero = () => {
                 ? "bg-primary shadow-lg scale-110"
                 : "bg-white/40 hover:bg-primary/60"
             }`}
-          />;
-        })}
+          />
+        ))}
       </div>
 
       {/* Slides */}
