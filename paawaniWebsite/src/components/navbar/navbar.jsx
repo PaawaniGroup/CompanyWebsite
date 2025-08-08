@@ -4,7 +4,7 @@ import logo from "../../assets/Logo2.svg";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const navbar = () => {
+const Navbar = () => {
   const navitems = [
     { name: "About Us", id: "about", link: "/about" },
     { name: "Our Businesses", id: "business", link: "/about" },
@@ -126,4 +126,4 @@ const navbar = () => {
   );
 };
 
-export default navbar;
+export default Navbar;
