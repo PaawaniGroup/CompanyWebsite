@@ -198,7 +198,7 @@ const hero = () => {
         >
           {/* Dynamic Slide-specific BG Texture */}
           <div
-            className="abcolute inset-0 z-0"
+            className="absolute inset-0 z-0"
             style={getBackgroundTexture(slides[currentSlide].backgroundTexture)}
           ></div>
           {/* Additional Animated BG Elements */}
@@ -380,7 +380,7 @@ const hero = () => {
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{
-                duration: 6,
+                duration: 5,
                 ease: "linear",
                 repeat: isAutoPlaying ? Infinity : 0,
               }}
