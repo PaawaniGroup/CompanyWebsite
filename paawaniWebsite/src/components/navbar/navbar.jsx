@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
-import logo from "../../assets/Logo2.svg";
+import logo from "../../assets/Logo.svg";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
