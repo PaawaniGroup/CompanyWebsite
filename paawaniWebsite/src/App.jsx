@@ -9,10 +9,10 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <Whyus />
       <div className="mx-auto h-screen flex flex-col items-center justify-center">
         <h1 className="text-5xl font-bold">UNDER DEVELOPMENT</h1>
       </div>
-      <Whyus />
     </>
   );
 }
