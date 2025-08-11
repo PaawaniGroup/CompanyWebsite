@@ -139,7 +139,7 @@ const hero = () => {
 
   return (
     <section
-      className="relative max-h-screen bg-background overflow-hidden mt-20"
+      className="relative min-h-screen bg-background overflow-hidden pt-30"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -149,12 +149,12 @@ const hero = () => {
       <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full blur-3xl"></div>
 
       {/* Navigation Controls */}
-      <div className="absolute top-1/2 left-4 right-4 z-20 flex justify-between items-center pointer-events-none">
+      <div className="absolute top-1/3 lg:top-1/2 left-4 right-4 z-20 flex justify-between items-center pointer-events-none">
         <Button
           variant="outline"
           size="icon"
           onClick={prevSlide}
-          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12"
+          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12 hidden md:flex"
         >
           <ChevronLeft className="h-6 w-6" />
         </Button>
@@ -162,25 +162,60 @@ const hero = () => {
           variant="outline"
           size="icon"
           onClick={nextSlide}
-          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12"
+          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-0 hover:opacity-100 transition-all duration-300 w-12 h-12 hidden md:flex"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>
       </div>
 
       {/* Slide Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentSlide
-                ? "bg-primary shadow-lg scale-110"
-                : "bg-white/40 hover:bg-primary/60"
-            }`}
-          />
-        ))}
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {/* Mobile Navigation Controls */}
+        <div className="flex items-center gap-4 mb-4 md:hidden justify-center">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={prevSlide}
+            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <div className="flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-primary shadow-lg scale-110'
+                    : 'bg-white/40 hover:bg-primary/60'
+                }`}
+              />
+            ))}
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={nextSlide}
+            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+        {/* Desktop Slide Indicators */}
+        <div className="hidden md:flex gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? 'bg-primary shadow-lg scale-110'
+                  : 'bg-white/40 hover:bg-primary/60'
+              }`}
+            />
+          ))}
+        </div>    
       </div>
 
       {/* Slides */}
@@ -194,7 +229,7 @@ const hero = () => {
             duration: 0.8,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          clasName="relative h-screen flex items-center"
+          clasName="relative min-h-screen flex items-center"
         >
           {/* Dynamic Slide-specific BG Texture */}
           <div
@@ -204,7 +239,7 @@ const hero = () => {
           {/* Additional Animated BG Elements */}
           <motion.div
             animate={{
-              backgroundPosition: ["0px 0px, 100px 100px"],
+              backgroundPosition: ["0px 0px", "100px 100px"],
             }}
             transition={{
               duration: 20,
@@ -219,14 +254,14 @@ const hero = () => {
             }}
           ></motion.div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pb-16 sm:pb-20 lg:pb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)]">
               {/* Left Side */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="space-y-10 order-2 lg:order-1"
+                className="space-y-6 sm:space-y-8 lg:space-y-10 order-2 lg:order-1 px-4 sm:px-0 relative z-30"
               >
                 <Badge
                   title={`Slide ${currentSlide + 1} of ${slides.length}`}
@@ -235,7 +270,7 @@ const hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   tranisition={{ delay: 0.5, duration: 0.8 }}
-                  className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-charcoal"
+                  className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-charcoal"
                 >
                   {slides[currentSlide].title.split(" ").map((word, index) => {
                     const highlightWords = [
@@ -265,7 +300,7 @@ const hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7, duration: 0.8 }}
-                  className="font-body text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
+                  className="font-body text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl"
                 >
                   {slides[currentSlide].subtitle}
                 </motion.p>
@@ -278,14 +313,14 @@ const hero = () => {
                 >
                   <Button
                     onClick={scrollToContact}
-                    className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg"
+                    className="btn-modern font-body text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg"
                   >
                     Get Started Today
                   </Button>
                   <Button
                     variant="outline"
                     onClick={scrollToAbout}
-                    className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white px-10 py-4 text-lg font-semibold rounded-full transition-all duration-300 group"
+                    className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 group"
                   >
                     Learn More
                   </Button>
@@ -295,14 +330,14 @@ const hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.1, duration: 0.8 }}
-                  className="grid grid-cols-3 gap-8 pt-8 border-t border-border"
+                  className="grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-border relative z-30"
                 >
                   {stats.map((stat) => (
                     <div key={stat.id} className="text-center">
-                      <div className="font-heading text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent mb-1">
+                      <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent mb-1">
                         {stat.number}
                       </div>
-                      <div className="font-heading text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent mb-1">
+                      <div className="font-body text-muted-foreground text-xs sm:text-sm">
                         {stat.label}
                       </div>
                     </div>
@@ -315,13 +350,13 @@ const hero = () => {
                 initial={{ opacity: 0, scale: 0.9, x: 50 }}
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 1 }}
-                className="relative order-1 lg:order-2"
+                className="relative order-1 lg:order-2 px-4 sm:px-0 z-30"
               >
                 <div className="relative">
                   {/* Main Img Container */}
                   <div className="modern-card rounded-3xl overflow-hidden bg-texture-wave relative">
                     <div
-                      className="w-full h-[400px] md:h-[500px] lg:h-[650px] bg-cover bg-center relative"
+                      className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[650px] bg-cover bg-center relative"
                       style={{
                         backgroundImage: `url('${slides[currentSlide].image}')`,
                       }}
