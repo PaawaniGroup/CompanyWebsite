@@ -139,7 +139,7 @@ const hero = () => {
 
   return (
     <section
-      className="relative min-h-screen bg-background overflow-hidden pt-30"
+      className="relative min-h-screen bg-background overflow-hidden pt-20"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -229,7 +229,7 @@ const hero = () => {
             duration: 0.8,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          clasName="relative min-h-screen flex items-center"
+          className="relative min-h-screen flex items-center"
         >
           {/* Dynamic Slide-specific BG Texture */}
           <div
