@@ -78,7 +78,7 @@ const Partnership = () => {
           className="text-center mb-24"
         >
           <Badge title="Partnership" />
-          <h2 className="font-heading text-5xl md:text-6xl font-bold text-charcoal mb-8">
+          <h2 className="font-heading text-5xl md:text-6xl font-bold text-charcoal mb-8 mt-5">
             Be Our{" "}
             <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
               Partner
