@@ -82,10 +82,10 @@ const OurPartners = () => {
       className="py-30 bg-background relative overflow-hidden"
     >
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-texture-dots opacity-40"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
-      <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-texture-dots opacity-100"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full opacity-20"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full opacity-20"></div>
+      <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
@@ -122,7 +122,7 @@ const OurPartners = () => {
                 className="group"
               >
                 <Card className="modern-card border-0 transition-all duration-300 hover:-translate-y-2 bg-texture-noise">
-                  <CardContent className="p-8 text-center">
+                  <CardContent className="px-6 pt-2 text-center">
                     {/* Partner Logo */}
                     <div className="w-32 h-20 mx-auto mb-6 flex items-center justify-center overflow-hidden">
                       <img
