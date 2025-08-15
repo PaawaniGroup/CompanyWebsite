@@ -58,18 +58,36 @@ const Partnership = () => {
     },
   ];
 
+  const opportunities = [
+    {
+      type: "Strategic Alliance",
+      description: "Long-term partnerships for market expansion and innovation",
+      features: ["Joint ventures", "Technology sharing", "Market access"],
+    },
+    {
+      type: "Distribution Partner",
+      description: "Exclusive or regional distribution arrangements",
+      features: ["Product distribution", "Sales support", "Training programs"],
+    },
+    {
+      type: "Solution Partner",
+      description: "Collaborative solution development and delivery",
+      features: ["Co-development", "Technical integration", "Joint marketing"],
+    },
+  ];
+
   return (
     <section
       id="partnership"
-      className="pt-30 bg-accent relative overflow-hidden"
+      className="py-30 bg-accent relative overflow-hidden"
     >
       {/* BG Elements */}
       <div className="absolute inset-0 bg-texture-grid opacity-60" />
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
 
-      {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,8 +176,12 @@ const Partnership = () => {
                       <div className="w-20 h-20 bg-gradient-to-br from-primary to-[#1a8f21] rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                         <Icon className="h-10 w-10 text-white" />
                       </div>
-                      <h4 className="font-heading text-xl font-semibold text-charcoal mb-3">{card.title}</h4>
-                      <p className="font-body text-muted-foreground text-sm leading-relaxed">{card.description}</p>
+                      <h4 className="font-heading text-xl font-semibold text-charcoal mb-3">
+                        {card.title}
+                      </h4>
+                      <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                        {card.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -167,7 +189,61 @@ const Partnership = () => {
             })}
           </motion.div>
         </div>
+
+        {/* Partnership Opportunities */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="glass-effect rounded-3xl p-16 shadow-2xl bg-teture-wave relative overflow-hidden"
+        >
+          <div className="absolute inset-0 gradient-overlay-green-light" />
+          <div className="relative z-10">
+            {/* Subsection Header */}
+            <div className="text-center mb-16">
+              <h3 className="font-heading text-4xl font-bold text-charcoal mb-6">
+                Partnership Opportunities
+              </h3>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto leading-relaxed text-lg">
+                We offer various partnership models tailored to meet different
+                business needs and objectives.
+              </p>
+            </div>
+
+            {/* Content grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {opportunities.map((opportunities, index) => (
+              <motion.div
+                key={opportunities.type}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-8 glass-effect rounded-2xl hover:shadow-xl transition-all duration-300 bg-texture-dots"
+                >
+                  <h4 className="font-heading text-2xl font-semibold text-charcoal mb-4">{opportunities.type}</h4>
+                  <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+                    {opportunities.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {opportunities.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="font-body text-sm text-muted-foreground flex items-center justify-center gap-2">
+                        <div className="w-1.5 h-1.5 b-primary rounded-full" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+              </motion.div>
+            ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 right-10 w-4 h-4 bg-primary/30 rounded-full animate-ping"></div>
+      <div className="absolute bottom-1/4 left-10 w-6 h-6 bg-primary/20 rounded-full animate-pulse"></div>
     </section>
   );
 };
