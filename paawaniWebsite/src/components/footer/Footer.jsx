@@ -16,6 +16,7 @@ import {
   Send,
   ChevronRight,
 } from "lucide-react";
+import { Separator } from "../ui/separator";
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -185,6 +186,7 @@ const Footer = () => {
           </div>
         </div>
 
+        <Separator />        
         {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0 }}
