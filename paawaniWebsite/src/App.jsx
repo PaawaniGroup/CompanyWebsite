@@ -6,6 +6,7 @@ import OurPartners from "./components/partners/OurPartners";
 import Partnership from "./components/partners/Partnership";
 import Testimonials from "./components/testimonials/Testimonials";
 import LatestBlogs from "./components/blog/Blogs"
+import Contact from "./components/contact/Contact"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Partnership />
       <Testimonials />
       <LatestBlogs />
+      <Contact />
       <div className="mx-auto h-screen flex flex-col items-center justify-center">
         <h1 className="text-5xl font-bold">UNDER DEVELOPMENT</h1>
       </div>
