@@ -78,7 +78,7 @@ const Partnership = () => {
 
   return (
     <section
-      id="partnership"
+      id="partner"
       className="py-30 bg-accent relative overflow-hidden"
     >
       {/* BG Elements */}
