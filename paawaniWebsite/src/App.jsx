@@ -5,6 +5,7 @@ import Whyus from "./components/whyus/WhyUs";
 import OurPartners from "./components/partners/OurPartners";
 import Partnership from "./components/partners/Partnership";
 import Testimonials from "./components/testimonials/Testimonials";
+import LatestBlogs from "./components/blog/Blogs"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <OurPartners />
       <Partnership />
       <Testimonials />
+      <LatestBlogs />
       <div className="mx-auto h-screen flex flex-col items-center justify-center">
         <h1 className="text-5xl font-bold">UNDER DEVELOPMENT</h1>
       </div>
