@@ -104,12 +104,12 @@ const OurBusinesses = () => {
                     </p>
 
                     <div className="flex items-center justify-between pt-6">
-                      <Link to="/">
+                      <Link to="/business/mme">
                         <Button
                           variant="outline"
                           className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 x-6 py-3 rounded-full font-semibold"
                         >
-                          Learn More
+                          Learn More  
                         </Button>
                       </Link>
 
@@ -117,7 +117,7 @@ const OurBusinesses = () => {
                         className="w-14 h-14 rounded-full bg-secondary group-hover:bg-primary flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
                         whileHover={{ scale: 1.1, rotate: 45 }}
                       >
-                        <Link to="/">
+                        <Link to="/business/mme">
                           <ArrowRight className="h-6 w-6 text-charcoal group-hover:text-white transition-colors duration-300" />
                         </Link>
                       </motion.div>
