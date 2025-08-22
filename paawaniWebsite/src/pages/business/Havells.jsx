@@ -2,17 +2,17 @@ import React from "react";
 import { motion } from "motion/react";
 import {
   ArrowLeft,
-  Users,
-  Globe,
-  Award,
-  Target,
-  BookOpen,
-  GraduationCap,
+  Zap,
+  Shield,
+  Lightbulb,
+  Wifi,
+  Home,
   Star,
   CheckCircle,
   Phone,
   Mail,
   MapPin,
+  Award,
 } from "lucide-react";
 import SecHeader from "@/components/SecHeader";
 import Badge from "@/components/Badge";
@@ -20,73 +20,89 @@ import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Card, CardContent } from "@/components/ui/card";
 
-const MakeMyEdu = () => {
-  const services = [
+const Havells = () => {
+  const solutions = [
     {
       id: 1,
-      icon: BookOpen,
-      title: "University Admissions",
+      icon: Lightbulb,
+      title: "Smart Lighting Solutions",
       description:
-        "Expert guidance for undergraduate and graduate admissions to top universities worldwide.",
+        "Energy-efficient LED lighting systems with smart controls and automation capabilities.",
       features: [
-        "Application Strategy",
-        "Document Preparation",
-        "Interview Coaching",
-        "Scholarship Assistance",
+        "LED Technology",
+        "Smart Controls",
+        "Energy Saving",
+        "Remote Management",
       ],
     },
     {
       id: 2,
-      icon: GraduationCap,
-      title: "Career Counseling",
+      icon: Home,
+      title: "Home Automation",
       description:
-        "Comprehensive career guidance to help students choose the right educational path.",
+        "Complete smart home solutions for modern living with integrated IoT devices.",
       features: [
-        "Aptitude Testing",
-        "Career Mapping",
-        "Industry Insights",
-        "Professional Mentoring",
+        "Voice Control",
+        "Mobile App",
+        "Security Integration",
+        "Energy Monitoring",
       ],
     },
     {
       id: 3,
-      icon: Globe,
-      title: "Study Abroad Programs",
+      icon: Zap,
+      title: "Electrical Infrastructure",
       description:
-        "Complete support for international education including visa assistance and accommodation.",
+        "Comprehensive electrical solutions for residential, commercial, and industrial applications.",
       features: [
-        "Visa Processing",
-        "Accommodation Support",
-        "Pre-departure Training",
-        "Alumni Network",
+        "Switchgear",
+        "Distribution Boards",
+        "Circuit Protection",
+        "Power Management",
       ],
     },
     {
       id: 4,
-      icon: Target,
-      title: "Test Preparation",
+      icon: Shield,
+      title: "Safety & Protection",
       description:
-        "Intensive coaching for IELTS, TOEFL, GRE, GMAT, and other standardized tests.",
+        "Advanced safety systems and protective devices for electrical installations.",
       features: [
-        "Expert Faculty",
-        "Mock Tests",
-        "Personalized Study Plans",
-        "Score Improvement",
+        "RCBO Technology",
+        "Surge Protection",
+        "Fire Safety",
+        "Emergency Systems",
       ],
     },
   ];
 
-  const partners = [
-    "Harvard University",
-    "MIT",
-    "Stanford University",
-    "Oxford University",
-    "Cambridge University",
-    "Yale University",
-    "Princeton University",
-    "ETH Zurich",
-    "University of Toronto",
-    "Australian National University",
+  const products = [
+    {
+      id: 1,
+      category: "Lighting",
+      name: "LED Downlights",
+      description:
+        "Premium quality LED downlights for residential and commercial spaces.",
+      image:
+        "https://images.unsplash.com/photo-1675602487652-3a4d8cdada94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwZW5naW5lZXJpbmclMjBzbWFydCUyMGhvbWUlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTY3MjAxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    },
+    {
+      id: 2,
+      category: "Automation",
+      name: "Smart Switches",
+      description:
+        "Intelligent switching solutions with app control and voice commands.",
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+    },
+    {
+      id: 3,
+      category: "Infrastructure",
+      name: "Distribution Boards",
+      description: "Robust and reliable electrical distribution solutions.",
+      image:
+        "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop",
+    },
   ];
 
   return (
@@ -106,24 +122,24 @@ const MakeMyEdu = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <Badge title="Education Excellence" />
+              <Badge title="Strategic Partnership" />
               <h1 className="font-heading text-5xl md:text-6xl font-bold text-charcoal leading-tight">
-                Empowering{" "}
+                Powering{" "}
                 <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
-                  Future Leaders
+                  Smart Solutions
                 </span>
               </h1>
 
               <p className="font-body text-xl text-muted-foreground leading-relaxed">
-                MakeMyEducation is your trusted partner in achieving academic
-                excellence. We provide comprehensive educational consulting
-                services to help students realize their dreams of studying at
-                world-renowned institutions.
+                Through our strategic partnership with Havells, we deliver
+                cutting-edge electrical solutions, smart home automation, and
+                energy-efficient technologies that transform the way you live
+                and work.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="btn-modern text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300">
-                  Start Your Journey
+                  Explore Solutions
                 </Button>
                 <Button
                   variant="outline"
@@ -142,8 +158,8 @@ const MakeMyEdu = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1660128357991-713518efae48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwY2FtcHVzJTIwc3R1ZGVudHMlMjBzdHVkeWluZyUyMGVkdWNhdGlvbnxlbnwxfHx8fDE3NTU2NzIwMDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="MakeMyEducation"
+                  src="https://images.unsplash.com/photo-1675602487652-3a4d8cdada94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwZW5naW5lZXJpbmclMjBzbWFydCUyMGhvbWUlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTY3MjAxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  alt="Havells Automation"
                   className="w-full h-[500px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
@@ -153,23 +169,23 @@ const MakeMyEdu = () => {
         </div>
       </section>
 
-      {/* Our Services */}
+      {/* Solutions */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SecHeader
-            title="Our Services"
-            description="Comprehensive educational services designed to guide you through every step of your academic journey."
+            title="Our Solutions"
+            description="Comprehensive electrical and automation solutions designed for modern living and working spaces."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service) => {
-              const Icon = service.icon;
+            {solutions.map((solution) => {
+              const Icon = solution.icon;
               return (
                 <motion.div
-                  key={service.id}
+                  key={solution.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: service.id * 0.1 }}
+                  transition={{ duration: 0.8, delay: solution.id * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <Card className="modern-card border-0 h-full hover:-translate-y-2 transition-all duration-300 bg-texture-noise">
@@ -178,13 +194,13 @@ const MakeMyEdu = () => {
                         <Icon className="h-8 w-8 text-white" />
                       </div>
                       <h3 className="font-heading text-2xl font-semibold text-charcoal mb-4">
-                        {service.title}
+                        {solution.title}
                       </h3>
                       <p className="font-body text-muted-foreground mb-6 leading-relaxed">
-                        {service.description}
+                        {solution.description}
                       </p>
                       <ul className="space-y-2">
-                        {service.features.map((feature, index) => (
+                        {solution.features.map((feature, index) => (
                           <li key={index} className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                             <span className="font-body text-charcoal">
@@ -202,27 +218,57 @@ const MakeMyEdu = () => {
         </div>
       </section>
 
-      {/* Partner Colleges */}
+      {/* Products Showcase */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SecHeader
-            title="Partner Colleges"
-            description="We have partnerships with leading universities and institutions worldwide."
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-heading text-4xl font-bold text-charcoal mb-4">
+              Featured Products
+            </h2>
+            <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore our range of innovative electrical products and smart
+              solutions.
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {partners.map((partner) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {products.map((product) => (
               <motion.div
-                key={partner.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: partner.id * 0.05 }}
+                key={product.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: product.id * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-4 glass-effect rounded-3xl hover:shadow-lg transition-all duration-300"
               >
-                <span className="font-body text-charcoal font-medium text-sm">
-                  {partner}
-                </span>
+                <Card className="modern-card border-0 overflow-hidden hover:-translate-y-2 transition-all duration-300">
+                  <div className="relative h-48">
+                    <ImageWithFallback
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 glass-effect text-charcoal text-xs font-body font-semibold rounded-full">
+                        {product.category}
+                      </span>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="font-heading text-xl font-semibold text-charcoal mb-2">
+                      {product.name}
+                    </h3>
+                    <p className="font-body text-muted-foreground text-sm leading-relaxed">
+                      {product.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -240,11 +286,11 @@ const MakeMyEdu = () => {
               viewport={{ once: true }}
             >
               <h2 className="font-heading text-4xl font-bold text-charcoal mb-6">
-                Ready to Start Your Educational Journey?
+                Ready to Electrify Your Space?
               </h2>
               <p className="font-body text-xl text-muted-foreground mb-8 leading-relaxed">
-                Contact our expert counselors today for a free consultation and
-                take the first step towards your dream education.
+                Contact us today to discuss your electrical and automation
+                needs. Our experts are ready to provide customized solutions.
               </p>
 
               <div className="space-y-6">
@@ -268,11 +314,11 @@ const MakeMyEdu = () => {
                   </div>
                   <div>
                     <div className="font-body font-semibold text-charcoal">
-                    Mail Us
-                  </div>
-                  <div className="font-body text-muted-foreground">
-                    info@makemyeducation.com
-                  </div>
+                      Mail Us
+                    </div>
+                    <div className="font-body text-muted-foreground">
+                      info@makemyeducation.com
+                    </div>
                   </div>
                 </div>
 
@@ -314,4 +360,4 @@ const MakeMyEdu = () => {
   );
 };
 
-export default MakeMyEdu;
+export default Havells;

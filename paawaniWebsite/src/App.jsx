@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Business from './pages/business/OurBusinesses'
 import MakeMyEdu from './pages/business/MakeMyEdu'
+import Havells from './pages/business/Havells'
 import Footer from './components/footer/Footer'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/business" element={<Business />} />
         <Route path="/business/mme" element={<MakeMyEdu />} />
+        <Route path="/business/havells" element={<Havells />} />
       </Routes>
       <Footer />
     </>
