@@ -18,7 +18,7 @@ const OurBusinesses = () => {
         "Empowering students worldwide with comprehensive educational consulting, admissions guidance, and global learning opportunities.",
       image:
         "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop",
-      link: "makemyeducation",
+      link: "/business/mme",
       category: "Education",
       color: "from-[#20ab26] to-[#1a8f21]",
     },
@@ -29,7 +29,7 @@ const OurBusinesses = () => {
         "Strategic alliance delivering cutting-edge electrical solutions, smart home automation, and energy-efficient technologies.",
       image:
         "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-      link: "havells",
+      link: "/business/havells",
       category: "Technology",
       color: "from-[#1a8f21] to-[#16a085]",
     },
@@ -104,7 +104,7 @@ const OurBusinesses = () => {
                     </p>
 
                     <div className="flex items-center justify-between pt-6">
-                      <Link to="/business/mme">
+                      <Link to={item.link}>
                         <Button
                           variant="outline"
                           className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 x-6 py-3 rounded-full font-semibold"
@@ -117,7 +117,7 @@ const OurBusinesses = () => {
                         className="w-14 h-14 rounded-full bg-secondary group-hover:bg-primary flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
                         whileHover={{ scale: 1.1, rotate: 45 }}
                       >
-                        <Link to="/business/mme">
+                        <Link to={item.link}>
                           <ArrowRight className="h-6 w-6 text-charcoal group-hover:text-white transition-colors duration-300" />
                         </Link>
                       </motion.div>
