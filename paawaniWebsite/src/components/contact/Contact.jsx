@@ -99,9 +99,9 @@ const Contact = () => {
                   </div>
                 </div>
                 <p className="font-body text-muted-foreground text-lg leading-relaxed">
-                  Ready to transform your business? Let's discuss how we can
+                  Let's discuss how we can
                   help you achieve your goals and create lasting impact in your
-                  industry.
+                  success.
                 </p>
               </div>
             </div>
