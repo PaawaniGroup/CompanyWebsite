@@ -4,7 +4,7 @@ import Whyus from "@/components/whyus/WhyUs";
 import OurPartners from "@/components/partners/OurPartners";
 import Partnership from "@/components/partners/Partnership";
 import Testimonials from "@/components/testimonials/Testimonials";
-import LatestBlogs from "@/components/blog/Blogs"
+// import LatestBlogs from "@/components/blog/Blogs"
 import Contact from "@/components/contact/Contact"
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       <OurPartners />
       <Partnership />
       <Testimonials />
-      <LatestBlogs />
+      {/* <LatestBlogs /> */}
       <Contact />
     </div>
   )

@@ -9,9 +9,9 @@ const Navbar = () => {
   const navitems = [
     { name: "About Us", id: "about", link: "/about" },
     { name: "Our Businesses", id: "businesses", link: "/business" },
-    { name: "Blogs", id: "blogs", link: "/blogs" },
+    // { name: "Blogs", id: "blogs", link: "/blogs" },
     { name: "Career", id: "career", link: "/career" },
-    { name: "Be Our Partner", id: "partner", link: "/partner" },
+    { name: "Be Our Partner", id: "partner", link: "/contact" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
