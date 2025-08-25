@@ -7,6 +7,8 @@ import Business from './pages/business/OurBusinesses'
 import MakeMyEdu from './pages/business/MakeMyEdu'
 import Havells from './pages/business/Havells'
 import Footer from './components/footer/Footer'
+import Career from "./pages/career/Career";
+import Contact from './components/contact/Contact'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/business" element={<Business />} />
         <Route path="/business/mme" element={<MakeMyEdu />} />
         <Route path="/business/havells" element={<Havells />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>
