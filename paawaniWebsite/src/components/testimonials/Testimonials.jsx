@@ -57,7 +57,7 @@ const Testimonials = () => {
         <SectionHeader
         title="What Our"
         highlighted="Partners Say"
-        description="Discover how we've helped businesses across industries achieve their goals and drive sustainable growth."
+        description="Discover how we've helped our clients across industries achieve their goals and drive sustainable growth."
         badge={<Badge title="Client Success Stories" />}
       />
 
