@@ -1,56 +1,37 @@
 import React from "react";
+import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
+import { Link } from "react-router";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { motion } from "motion/react";
-import {
-  Users,
-  Target,
-  Lightbulb,
-  TrendingUp,
-  Globe,
-  Award,
-} from "lucide-react";
+import { Target, Lightbulb, TrendingUp, Award } from "lucide-react";
 
 const Partnership = () => {
   const cards = [
     {
       id: 1,
-      icon: Users,
-      title: "Strategic Collaboration",
-      description:
-        "Work with industry leaders to expand market reach and capabilities.",
-    },
-    {
-      id: 2,
       icon: Target,
       title: "Targeted Growth",
       description:
         "Access new markets and customer segments through our established networks.",
     },
     {
-      id: 3,
+      id: 2,
       icon: Lightbulb,
       title: "Innovation Access",
       description:
         "Leverage cutting-edge technologies and innovative solutions.",
     },
     {
-      id: 4,
+      id: 3,
       icon: TrendingUp,
       title: "Accelerated Success",
       description:
         "Fast-track your business growth with proven strategies and support.",
     },
     {
-      id: 5,
-      icon: Globe,
-      title: "Global Reach",
-      description:
-        "Expand internationally with our worldwide presence and expertise.",
-    },
-    {
-      id: 6,
+      id: 4,
       icon: Award,
       title: "Quality Assurance",
       description:
@@ -77,10 +58,7 @@ const Partnership = () => {
   ];
 
   return (
-    <section
-      id="partner"
-      className="py-30 bg-accent relative overflow-hidden"
-    >
+    <section id="partner" className="py-30 bg-accent relative overflow-hidden">
       {/* BG Elements */}
       <div className="absolute inset-0 bg-texture-grid opacity-60" />
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -88,25 +66,13 @@ const Partnership = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-24"
-        >
-          <Badge title="Partnership" />
-          <h2 className="font-heading text-5xl md:text-6xl font-bold text-charcoal mb-8 mt-5">
-            Be Our{" "}
-            <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
-              Partner
-            </span>
-          </h2>
-          <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Join forces with Paawani Group to unlock new opportunities, drive
-            innovation, and achieve sustainable growth together.
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="Be Our"
+          highlighted="Partner"
+          description="Join forces with Paawani Group to unlock new opportunities, drive
+            innovation, and achieve sustainable growth together."
+          badge={<Badge title="Partnership" />}
+        />
 
         {/* Section Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
@@ -121,11 +87,10 @@ const Partnership = () => {
             <div className="glass-effect rounded-3xl p-10 bg-texture-noise">
               <div className="space-y-8">
                 <h3 className="font-heading text-4xl font-bold text-charcoal">
-                  Why Partner with Paawani Group?
+                  Why Partner with Us?
                 </h3>
                 <p className="font-body text-lg text-muted-foreground leading-relaxed">
-                  We believe in the power of collaboration. Our partnership
-                  program is designed to create mutually beneficial
+                  We believe in the power of collaboration. We partner with industry leaders to create mutually beneficial
                   relationships that drive growth, innovation, and success for
                   all parties involved.
                 </p>
@@ -133,10 +98,10 @@ const Partnership = () => {
 
               <div className="space-y-6 mt-8">
                 {[
-                  "Proven track record across multiple industries",
-                  "Comprehensive support and resources",
-                  "Flexible partnership models",
-                  "Global network and reach",
+                  "Tailored for Your Success",
+                  "Dedicated Partner Support",
+                  "Forward-Thinking Strategies",
+                  "Commitment to Your Growth",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
                     <div className="w-3 h-3 bg-gradient-to-r from-primary to-[#1a8f21] rounded-full" />
@@ -146,9 +111,11 @@ const Partnership = () => {
                   </div>
                 ))}
               </div>
-              <Button className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5">
-                Start Your Partnership Journey
-              </Button>
+              <Link to="/contact">
+                <Button className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5">
+                  Start Your Partnership Journey
+                </Button>
+              </Link>
             </div>
           </motion.div>
 
@@ -214,28 +181,33 @@ const Partnership = () => {
             {/* Content grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {opportunities.map((opportunities, index) => (
-              <motion.div
-                key={opportunities.type}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-8 glass-effect rounded-2xl hover:shadow-xl transition-all duration-300 bg-texture-dots"
+                <motion.div
+                  key={opportunities.type}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-8 glass-effect rounded-2xl hover:shadow-xl transition-all duration-300 bg-texture-dots"
                 >
-                  <h4 className="font-heading text-2xl font-semibold text-charcoal mb-4">{opportunities.type}</h4>
+                  <h4 className="font-heading text-2xl font-semibold text-charcoal mb-4">
+                    {opportunities.type}
+                  </h4>
                   <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                     {opportunities.description}
                   </p>
                   <ul className="space-y-3">
                     {opportunities.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="font-body text-sm text-muted-foreground flex items-center justify-center gap-2">
+                      <li
+                        key={fIndex}
+                        className="font-body text-sm text-muted-foreground flex items-center justify-center gap-2"
+                      >
                         <div className="w-1.5 h-1.5 b-primary rounded-full" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
