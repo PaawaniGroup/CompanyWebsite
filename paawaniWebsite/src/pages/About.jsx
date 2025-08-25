@@ -20,7 +20,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
-import CTA from "../components/Cta"
+import CTA from "../components/Cta";
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
@@ -300,7 +300,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-12"
+            className="space-y-13"
           >
             {/* Mission */}
             <Card className="modern-card border-0 bg-texture-noise">
@@ -339,6 +339,61 @@ const About = () => {
                       recognized for our commitment to excellence, innovation,
                       and sustainable growth across all industries we serve.
                     </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Certifications */}
+            <Card className="modern-card border-0 bg-texture-noise">
+              <CardContent className="p-10">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Award className="h-8 w-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-3xl font-bold text-charcoal mb-2">
+                      Our Certifications
+                    </h3>
+                    <p className="font-body text-muted-foreground leading-relaxed text-lg mb-4">
+                      Explore our commitment to quality and excellence through
+                      our official certifications.
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-center gap-3">
+                        <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+                        <a
+                          href="/certificates/certificate1.jpg"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                        >
+                          ISO 9001:2015 Quality Management
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+                        <a
+                          href="/certificates/certificate2.jpg"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                        >
+                          ISO/IEC 27001:2013 Information Security
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+                        <a
+                          href="/certificates/certificate3.jpg"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                        >
+                          CMMI Level 3
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </CardContent>
@@ -489,10 +544,10 @@ const About = () => {
 
         {/* CTA */}
         <CTA
-        title="Ready to Transform Your Business?"
-        description="Join hundreds of successful companies that have partnered with us to achieve exceptional growth and innovation."
-        btnText="Get Started Today"     
-        path="/"
+          title="Ready to Transform Your Business?"
+          description="Join hundreds of successful companies that have partnered with us to achieve exceptional growth and innovation."
+          btnText="Get Started Today"
+          path="/"
         />
       </div>
     </section>
