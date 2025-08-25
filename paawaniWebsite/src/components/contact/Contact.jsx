@@ -59,11 +59,11 @@ const Contact = () => {
       className="py-30 bg-background relative overflow-hidden"
     >
       {/* Background Textures and Elements */}
-      <div className="absolute inset-0 bg-texture-grid opacity-70" />
-      <div className="absolute inset-0 bg-texture-dots opacity-70" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-xl" />
-      <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full blur-xl" />
+      <div className="absolute inset-0 bg-texture-grid opacity-50" />
+      <div className="absolute inset-0 bg-texture-dots opacity-50" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" />
+      <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <SectionHeader
@@ -82,10 +82,10 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-10"
           >
-            <div className="glass-effect rounded-3xl p-10 bg-texture-wave relative overflow-hidden">
+            <div className="glass-effect rounded-3xl px-10 py-8 bg-texture-wave relative overflow-hidden">
               <div className="absolute inset-0 gradient-overlay-green-light" />
               <div className="relative z-10">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-5">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#1a8f21] rounded-3xl flex items-center justify-center shadow-lg">
                     <MessageCircle className="h-8 w-8 text-white" />
                   </div>
@@ -119,7 +119,7 @@ const Contact = () => {
                     className="group"
                   >
                     <Card className="modern-card border-0 transition-all duration-300 hover:-translate-y-1 bg-texture-noise">
-                      <CardContent className="p-6">
+                      <CardContent className="px-5 py-1">
                         <div className="flex items-start gap-4">
                           <div
                             className={`w-14 h-14 bg-gradient-to-br ${info.color} rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
@@ -151,7 +151,7 @@ const Contact = () => {
           >
             <Card className="modern-card border-0 shadow-2xl bg-texture-noise relative overflow-hidden">
               <div className="absolute inset-0 gradient-overlay-green-light" />
-              <CardContent className="p-10 relative z-10">
+              <CardContent className="p-12 relative z-10">
                 <div className="mb-8">
                   <h3 className="font-heading text-3xl font-bold text-charcoal mb-4">
                     Send us a Message
