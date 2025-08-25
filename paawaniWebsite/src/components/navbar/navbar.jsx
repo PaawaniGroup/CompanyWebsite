@@ -3,14 +3,15 @@ import { Button } from "../ui/button";
 import logo from "../../assets/Logo.svg";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const navitems = [
     { name: "About Us", id: "about", link: "/about" },
-    { name: "Our Businesses", id: "business", link: "/about" },
-    { name: "Blogs", id: "blogs", link: "/about" },
-    { name: "Career", id: "career", link: "/about" },
-    { name: "Be Our Partner", id: "partner", link: "/about" },
+    { name: "Our Businesses", id: "businesses", link: "/business" },
+    // { name: "Blogs", id: "blogs", link: "/blogs" },
+    { name: "Career", id: "career", link: "/career" },
+    { name: "Be Our Partner", id: "partner", link: "/contact" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,23 +56,20 @@ const Navbar = () => {
             >
               Paawani Group
             </a>
-            {/* <h1 className="font-heading text-2xl lg:text-3xl font-bold text-primary">
-              Paawani Group
-            </h1> */}
           </div>
 
           {/* Desktop Navbar */}
           <div className="hidden lg:flex">
             <div className="nav-items mx-10 flex items-center space-x-6">
               {navitems.map((item) => (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  to={item.link}
                   className="nav-item font-body text-charcoal hover:text-primary px-4 py-2 text-base font-medium transition-all duration-300 relative group"
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-[#1a8f21] transition-all duration-300 group-hover:w-full"></span>
-                </button>
+                </Link>
               ))}
             </div>
             <Button

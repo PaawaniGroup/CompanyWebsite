@@ -52,23 +52,23 @@ const hero = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying, slides.length]);
 
-  const stats = [
-    {
-      id: 1,
-      number: "500+",
-      label: "Happy Clients",
-    },
-    {
-      id: 2,
-      number: "15+",
-      label: "Years of Experience",
-    },
-    {
-      id: 3,
-      number: "50+",
-      label: "Countries",
-    },
-  ];
+  // const stats = [
+  //   {
+  //     id: 1,
+  //     number: "500+",
+  //     label: "Happy Clients",
+  //   },
+  //   {
+  //     id: 2,
+  //     number: "15+",
+  //     label: "Years of Experience",
+  //   },
+  //   {
+  //     id: 3,
+  //     number: "50+",
+  //     label: "Countries",
+  //   },
+  // ];
 
   const nextSlide = () => {
     setCurrentSlide(
@@ -233,8 +233,8 @@ const hero = () => {
         >
           {/* Dynamic Slide-specific BG Texture */}
           <div
-            className="absolute inset-0 z-0"
-            style={getBackgroundTexture(slides[currentSlide].backgroundTexture)}
+            className="absolute inset-0 z-0 bg-white/70"
+            // style={getBackgroundTexture(slides[currentSlide].backgroundTexture)}
           ></div>
           {/* Additional Animated BG Elements */}
           <motion.div
@@ -246,7 +246,7 @@ const hero = () => {
               repeat: Infinity,
               ease: "linear",
             }}
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 opacity-10"
             style={{
               backgroundImage: `radial-gradient(circle at 20% 50%, rgba(32, 171, 38, 0.08) 20px, transparent 21px),
                 radial-gradient(circle at 80% 50%, rgba(32, 171, 38, 0.08) 20px, transparent 21px)`,
@@ -326,7 +326,7 @@ const hero = () => {
                   </Button>
                 </motion.div>
                 {/* Stats */}
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.1, duration: 0.8 }}
@@ -342,7 +342,7 @@ const hero = () => {
                       </div>
                     </div>
                   ))}
-                </motion.div>
+                </motion.div> */}
               </motion.div>
 
               {/* Right Side */}
