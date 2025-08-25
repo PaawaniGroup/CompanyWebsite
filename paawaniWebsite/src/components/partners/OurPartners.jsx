@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
 import { Card, CardContent } from "../ui/card";
 import { motion } from "motion/react";
@@ -16,64 +17,8 @@ const OurPartners = () => {
       description:
         "Leading provider of innovative solutions in the tech industry.",
       category: "Automation",
-      website: "#",
-    },
-    {
-      id: 2,
-      logoUrl:
-        "https://edurank.org/assets/img/uni-logos/graphic-era-hill-university-logo.png",
-      title: "Graphic Era",
-      badge: "Gold Partner",
-      description:
-        "Leading provider of innovative solutions in the tech industry.",
-      category: "Education",
-      website: "#",
-    },
-    {
-      id: 3,
-      logoUrl:
-        "https://animationvisarts.com/wp-content/uploads/2017/05/chandigarh-university-seal-1.png",
-      title: "Chandigarh University",
-      badge: "Gold Partner",
-      description:
-        "Leading provider of innovative solutions in the tech industry.",
-      category: "Technology",
-      website: "#",
-    },
-    {
-      id: 4,
-      logoUrl:
-        "https://cis-india.org/Christuniversitylogocolour.jpg/download",
-      title: "Christ University",
-      badge: "Gold Partner",
-      description:
-        "Leading provider of innovative solutions in the tech industry.",
-      category: "Technology",
-      website: "#",
-    },
-    {
-      id: 5,
-      logoUrl:
-        "https://blog.oureducation.in/wp-content/uploads/2012/07/doon-university.gif",
-      title: "Doon University",
-      badge: "Gold Partner",
-      description:
-        "Leading provider of innovative solutions in the tech industry.",
-      category: "Technology",
-      website: "#",
-      website: "",
-    },
-    {
-      id: 6,
-      logoUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEgRvyVAr3Q_Ka3Wausl2i8dbr0eZUoA5MK_auXU-nO5q99f_ApnCsHxJ7uto5lyCWC0M&usqp=CAU",
-      title: "Parul University",
-      badge: "Gold Partner",
-      description:
-        "Leading provider of innovative solutions in the tech industry.",
-      category: "Technology",
-      website: "#",
-    },
+      website: "https://havells.com/",
+    }
   ];
 
   return (
@@ -89,28 +34,17 @@ const OurPartners = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <Badge title="Our Partners" />
-          <h2 className="font-heading text-5xl md:text-6xl font-bold text-charcoal mb-8 mt-5">
-            Trusted{" "}
-            <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
-              Partnerships
-            </span>
-          </h2>
-          <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We collaborate with industry leaders to deliver exceptional value
-            and innovative solutions to our clients worldwide.
-          </p>
-        </motion.div>
+        <SectionHeader
+        title="Trusted"
+        highlighted="Partnerships"
+        description="We collaborate with industry leaders to deliver exceptional value
+            and innovative solutions to our clients worldwide."
+        badge={<Badge title="Our Partners" />}
+      />
 
         {/* Section Content  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> */}
+        <div className="flex flex-wrap justify-center gap-8">
           {partners.map((partner) => {
             return (
               <motion.div
@@ -138,9 +72,9 @@ const OurPartners = () => {
                         <h3 className="font-heading text-xl font-bold text-charcoal     group-hover:text-primary transition-colors duration-300 mb-2">
                           {partner.title}
                         </h3>
-                        <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-body font-semibold rounded-full">
+                        {/* <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-body font-semibold rounded-full">
                           {partner.badge}
-                        </div>
+                        </div> */}
                       </div>
                       <p className="font-body text-muted-foreground text-sm leading-relaxed">
                         {partner.description}
