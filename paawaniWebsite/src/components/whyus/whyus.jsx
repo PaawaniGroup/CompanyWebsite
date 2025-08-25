@@ -7,49 +7,56 @@ import {
   Handshake,
   ChartLine,
 } from "lucide-react";
+import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
 import { Card, CardContent } from "../ui/card";
 import { motion } from "motion/react";
 
 const whyus = () => {
   const cards = [
-  {
-    icon: Atom,
-    title: "Holistic Solutions",
-    description: "We provide comprehensive strategies that guide you toward your goals.",
-    color: "from-[#20ab26] to-[#1a8f21]",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Seasoned Experts",
-    description: "Our team consists of experienced professionals who are committed to providing you with reliable and expert guidance.",
-    color: "from-[#1a8f21] to-[#16a085]",
-  },
-  {
-    icon: Compass,
-    title: "Client-First Focus",
-    description: "Your needs are our top priority. We provide a transparent, client-centric approach with dedicated support every step of the way.",
-    color: "from-[#16a085] to-[#27ae60]",
-  },
-  {
-    icon: Lightbulb,
-    title: "Pioneering Innovation",
-    description: "We use forward-thinking strategies and modern technology to bring you solutions that are ahead of the curve.",
-    color: "from-[#27ae60] to-[#2ecc71]",
-  },
-  {
-    icon: Handshake,
-    title: "Empowering Partnerships",
-    description: "We don’t just provide a service; we equip you with the knowledge and tools for long-term success.",
-    color: "from-[#2ecc71] to-[#20ab26]",
-  },
-  {
-    icon: ChartLine,
-    title: "Tangible Results",
-    description: "Our strategies are built to deliver clear, measurable results, helping you achieve your aspirations and goals.",
-    color: "from-[#20ab26] to-[#27ae60]",
-  },
-];
+    {
+      icon: Atom,
+      title: "Holistic Solutions",
+      description:
+        "We provide comprehensive strategies that guide you toward your goals.",
+      color: "from-[#20ab26] to-[#1a8f21]",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Seasoned Experts",
+      description:
+        "Our team consists of experienced professionals who are committed to providing you with reliable and expert guidance.",
+      color: "from-[#1a8f21] to-[#16a085]",
+    },
+    {
+      icon: Compass,
+      title: "Client-First Focus",
+      description:
+        "Your needs are our top priority. We provide a transparent, client-centric approach with dedicated support every step of the way.",
+      color: "from-[#16a085] to-[#27ae60]",
+    },
+    {
+      icon: Lightbulb,
+      title: "Pioneering Innovation",
+      description:
+        "We use forward-thinking strategies and modern technology to bring you solutions that are ahead of the curve.",
+      color: "from-[#27ae60] to-[#2ecc71]",
+    },
+    {
+      icon: Handshake,
+      title: "Empowering Partnerships",
+      description:
+        "We don’t just provide a service; we equip you with the knowledge and tools for long-term success.",
+      color: "from-[#2ecc71] to-[#20ab26]",
+    },
+    {
+      icon: ChartLine,
+      title: "Tangible Results",
+      description:
+        "Our strategies are built to deliver clear, measurable results, helping you achieve your aspirations and goals.",
+      color: "from-[#20ab26] to-[#27ae60]",
+    },
+  ];
 
   return (
     <section className="py-30 bg-gradient-to-b from-accent to-background relative overflow-hidden">
@@ -59,27 +66,14 @@ const whyus = () => {
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-primary/3 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <Badge title="Why Choose Us" />
-
-          <h2 className="font-heading text-5xl md:text-6xl font-bold text-charcoal mb-8 mt-5">
-            Excellence in Every{" "}
-            <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
-              Venture
-            </span>
-          </h2>
-          <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We combine innovation, expertise, and dedication to deliver
+        <SectionHeader
+          title="Excellence in Every"
+          highlighted="Venture"
+          description="We combine innovation, expertise, and dedication to deliver
             exceptional results that drive your business forward with measurable
-            impact.
-          </p>
-        </motion.div>
+            impact."
+          badge={<Badge title="Why Choose Us" />}
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cards.map((card, index) => {
