@@ -10,6 +10,7 @@ import Footer from './components/footer/Footer'
 import Career from "./pages/career/Career";
 import Contact from './components/contact/Contact'
 import UnderDevelopmentPage from "./components/UnderDev";
+import AddJobs from "@/admin/AddJobs";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/underdev" element={<UnderDevelopmentPage />} />
+        <Route path="/admin/addjobs" element={<AddJobs />} />
       </Routes>
       <Footer />
     </>
