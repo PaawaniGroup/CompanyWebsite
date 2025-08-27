@@ -9,6 +9,7 @@ import Havells from './pages/business/Havells'
 import Footer from './components/footer/Footer'
 import Career from "./pages/career/Career";
 import Contact from './components/contact/Contact'
+import UnderDevelopmentPage from "./components/UnderDev";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/business/havells" element={<Havells />} />
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/underdev" element={<UnderDevelopmentPage />} />
       </Routes>
       <Footer />
     </>

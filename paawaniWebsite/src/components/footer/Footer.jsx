@@ -35,23 +35,24 @@ const Footer = () => {
       id: 1,
       title: "Company",
       links: [
-        { name: "About Us", id: "about" },
-        { name: "Career", id: "career" },
-        { name: "Blogs", id: "blog" },
-        { name: "Partner Us", id: "partners" },
+        { name: "About Us", id: "/about" },
+        { name: "Career", id: "/career" },
+        // { name: "Blogs", id: "blog" },
+        { name: "Partner Us", id: "/contact" },
       ],
     },
     {
       id: 2,
       title: "Our Product",
       links: [
-        { name: "Overview", id: "business" },
-        { name: "Features", id: "business" },
-        { name: "Tutorials", id: "business" },
-        { name: "Pricing", id: "business" },
+        { name: "Overview", id: "/underdev" },
+        { name: "Features", id: "/underdev" },
+        { name: "Tutorials", id: "/underdev" },
+        { name: "Pricing", id: "/underdev" },
       ],
     },
     {
+      id: 3,
       title: "Legal",
       links: [
         { name: "Privacy Policy", href: "#" },
