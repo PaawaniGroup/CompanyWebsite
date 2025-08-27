@@ -72,12 +72,11 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              Contact Us
-            </Button>
+            <Link to="/contact">
+              <Button className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300">
+                Contact Us
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
