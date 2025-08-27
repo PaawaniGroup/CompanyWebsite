@@ -12,10 +12,6 @@ import {
   Globe,
   Award,
   TrendingUp,
-  Calendar,
-  MapPin,
-  Linkedin,
-  Mail,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -75,7 +71,7 @@ const About = () => {
       icon: Target,
       title: "Innovation",
       description:
-        "We embrace cutting-edge technologies and creative solutions to drive progress and solve complex challenges.",
+        "We embrace forward-thinking approaches, continuously exploring new ideas and collaborations to offer cutting-edge solutions and adapt to evolving markets.",
       color: "from-[#20ab26] to-[#1a8f21]",
     },
     {
@@ -83,15 +79,15 @@ const About = () => {
       icon: Heart,
       title: "Integrity",
       description:
-        "We conduct business with transparency, honesty, and ethical practices in all our relationships.",
+        "We uphold the highest ethical standards in all our dealings, ensuring transparency, honesty, and trustworthiness.",
       color: "from-[#1a8f21] to-[#16a085]",
     },
     {
       id: 3,
       icon: Users,
-      title: "Collaboration",
+      title: "Client-Centricity",
       description:
-        "We believe in the power of teamwork and partnerships to achieve extraordinary results.",
+        "Our clients are at the heart of everything we do; we listen, understand, and tailor our solutions to meet their unique needs and aspirations.",
       color: "from-[#16a085] to-[#27ae60]",
     },
     {
@@ -99,15 +95,15 @@ const About = () => {
       icon: TrendingUp,
       title: "Excellence",
       description:
-        "We strive for the highest standards in everything we do, continuously improving and growing.",
+        "We're committed to delivering superior quality in every service and product, constantly striving for improvement and exceeding expectations.",
       color: "from-[#27ae60] to-[#2ecc71]",
     },
     {
       id: 5,
-      icon: TrendingUp,
-      title: "Excellence",
+      icon: Globe,
+      title: "Empowerment",
       description:
-        "We strive for the highest standards in everything we do, continuously improving and growing.",
+        "We're dedicated to empowering individuals and businesses by providing the tools, knowledge, and connections they need to achieve their full potential.",
       color: "from-[#27ae60] to-[#2ecc71]",
     },
   ];
@@ -115,13 +111,11 @@ const About = () => {
   const partners = [
     {
       id: 1,
-      name: "Rajesh Paawani",
-      position: "Chief Executive Officer & Founder",
+      name: "Shobha Singh",
+      position: "Partner",
       bio: "With over 20 years of experience in business development and strategic planning, Rajesh has led Paawani Group to become a recognized leader in multiple industries.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      email: "rajesh@paawanigroup.com",
       achievements: [
         "Harvard Business School Alumni",
         "Industry Leader Award 2023",
@@ -129,17 +123,15 @@ const About = () => {
       ],
       linkedin:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      mail: "mailto:anshikagupta45612@example.com",
+      mail: "mailto:paawanigroup@gmail.com",
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      position: "Chief Operating Officer",
+      name: "Geetanjali Singh",
+      position: "Chairman",
       bio: "Priya brings extensive expertise in operations management and business strategy, ensuring seamless execution of our global initiatives.",
       image:
         "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      email: "priya@paawanigroup.com",
       achievements: [
         "MIT Sloan Graduate",
         "Operations Excellence Award",
@@ -147,16 +139,14 @@ const About = () => {
       ],
       linkedin:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      mail: "mailto:anshikagupta45612@example.com",
+      mail: "mailto:geetanjali@paawanigroup.com",
     },
     {
       id: 3,
-      name: "David Chen",
-      position: "Chief Technology Officer",
+      name: "Abhishek Singh",
+      position: "Chief Technology Analyst",
       bio: "David leads our technology initiatives and digital transformation efforts, driving innovation across all business verticals.",
       image: "https://i.ytimg.com/vi/ZcZM2dDt7aQ/maxresdefault.jpg",
-      linkedin: "#",
-      email: "david@paawanigroup.com",
       achievements: [
         "Stanford Computer Science PhD",
         "Tech Innovation Award",
@@ -164,17 +154,15 @@ const About = () => {
       ],
       linkedin:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      mail: "mailto:anshikagupta45612@example.com",
+      mail: "mailto:abhishek@paawanigroup.com",
     },
     {
       id: 4,
-      name: "Sarah Johnson",
+      name: "Amit Singh",
       position: "Chief Financial Officer",
       bio: "Sarah oversees our financial strategy and risk management, ensuring sustainable growth and profitability across all ventures.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      email: "sarah@paawanigroup.com",
       achievements: [
         "CPA Certified",
         "Finance Leader Award",
@@ -182,7 +170,7 @@ const About = () => {
       ],
       linkedin:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      mail: "mailto:anshikagupta45612@example.com",
+      mail: "mailto:amit@paawanigroup.com",
     },
   ];
 
@@ -202,7 +190,7 @@ const About = () => {
         <SectionHeader
           title="Transforming"
           highlighted="Business Excellence"
-          description="For over 15 years, Paawani Group has been at the forefront of business innovation, building lasting partnerships and creating value across diverse industries worldwide."
+          description="Paawani Group, a dynamic and forward-thinking enterprise dedicated to enriching lives and empowering progress across diverse sectors. We've established a significant presence in Uttarakhand, India, and beyond."
           badge={<Badge title="About Paawani Group" />}
         />
 
@@ -300,11 +288,14 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-13"
+            className="space-y-12"
           >
+            <h3 className="font-heading text-3xl font-bold text-charcoal mb-8">
+              Mission, Vision & Certifications
+            </h3>
             {/* Mission */}
             <Card className="modern-card border-0 bg-texture-noise">
-              <CardContent className="p-10">
+              <CardContent className="p-8">
                 <div className="flex items-start gap-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <Target className="h-8 w-8 text-white" />
@@ -314,9 +305,7 @@ const About = () => {
                       Our Mission
                     </h3>
                     <p className="font-body text-muted-foreground leading-relaxed text-lg">
-                      To empower businesses and individuals through innovative
-                      solutions, strategic partnerships, and exceptional service
-                      delivery that creates lasting value for all stakeholders.
+                      To empower individuals and businesses with expert education guidance and innovative technology, creating tailored solutions that enrich lives and drive progress for a brighter future.
                     </p>
                   </div>
                 </div>
@@ -335,9 +324,7 @@ const About = () => {
                       Our Vision
                     </h3>
                     <p className="font-body text-muted-foreground leading-relaxed text-lg">
-                      To be the global leader in business transformation,
-                      recognized for our commitment to excellence, innovation,
-                      and sustainable growth across all industries we serve.
+                      To be a trusted, multifaceted leader providing a holistic ecosystem of services that simplifies complex processes and facilitates access to global opportunities.
                     </p>
                   </div>
                 </div>
