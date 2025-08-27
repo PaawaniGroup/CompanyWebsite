@@ -8,6 +8,7 @@ import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { toast } from "sonner"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,17 +18,34 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    toast.success("Message Sent Successfully! We will get back to you soon.");
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
+  try {
+    const response = await fetch("http://localhost:8000/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    if (response.ok) {
+      toast.success("Message Sent Successfully! We will get back to you soon.");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      toast.error("Failed to send message. Please try again.");
+    }
+  } catch (error) {
+    console.error("Error sending form data:", error);
+    toast.error("Failed to send message. Please check your network connection.");
+  }
+};
 
   const contactInfo = [
     {
