@@ -134,7 +134,7 @@ const OurBusinesses = () => {
           title="Ready to Partner with Us?"
           description="Join our network of successful partnerships and discover new opportunities for growth and innovation."
           btnText="Explore Partnership Opportunities"
-          path="/"
+          path="/contact"
         />
       </div>
     </section>
