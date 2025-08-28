@@ -759,6 +759,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { toast } from "sonner";
 
 const Career = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
@@ -767,6 +768,17 @@ const Career = () => {
   const [jobOpenings, setJobOpenings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    position: "",
+    experience: "",
+    // resume: "",
+    coverLetter: "",
+  });
 
   useEffect(() => {
     const fetchJobOpenings = async () => {
@@ -797,13 +809,49 @@ const Career = () => {
 
   const displayJobs = filteredJobs;
 
-  const handleApply = (jobId) => {
+  const handleApply = async (e) => {
     setIsModalOpen(false);
     setSelectedJob(null);
 
     const formElement = document.getElementById("application-form");
     if (formElement) {
       formElement.scrollIntoView({ behavior: "smooth" });
+    }
+
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/send-career-mail",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      if (response.ok) {
+        toast.success(
+          "Message Sent Successfully! We will get back to you soon."
+        );
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          position: "",
+          experience: "",
+          // resume: "",
+          coverLetter: "",
+        });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error Applying for job: ", error);
+      toast.error(
+        "Failed to send message. Please check your network connection."
+      );
     }
   };
 
@@ -819,7 +867,6 @@ const Career = () => {
 
   return (
     <div className="min-h-screen bg-background pt-0">
-
       {/* Hero Section */}
       <section className="py-24 bg-white/70 relative overflow-hidden">
         {/* BG Elements */}
@@ -1105,7 +1152,7 @@ const Career = () => {
 
           <Card className="modern-card border-0">
             <CardContent className="p-8">
-              <form className="space-y-6">
+              <form onSubmit={handleApply} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <Label
@@ -1117,6 +1164,10 @@ const Career = () => {
                     <Input
                       id="firstName"
                       type="text"
+                      value={formData.firstName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, firstName: e.target.value })
+                      }
                       className="mt-2 border-2 border-border focus:border-primary"
                       required
                     />
@@ -1131,6 +1182,10 @@ const Career = () => {
                     <Input
                       id="lastName"
                       type="text"
+                      value={formData.lastName}
+                      onChange={(e) =>
+                        setFormData({ ...formData, lastName: e.target.value })
+                      }
                       className="mt-2 border-2 border-border focus:border-primary"
                       required
                     />
@@ -1147,6 +1202,10 @@ const Career = () => {
                   <Input
                     id="email"
                     type="email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     className="mt-2 border-2 border-border focus:border-primary"
                     required
                   />
@@ -1162,6 +1221,10 @@ const Career = () => {
                   <Input
                     id="phone"
                     type="tel"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     className="mt-2 border-2 border-border focus:border-primary"
                   />
                 </div>
@@ -1173,7 +1236,12 @@ const Career = () => {
                   >
                     Position of Interest *
                   </Label>
-                  <Select>
+                  <Select
+                    value={formData.position}
+                    onValueChange={(e) =>
+                      setFormData({ ...formData, position: e })
+                    }
+                  >
                     <SelectTrigger className="mt-2 border-2 border-border focus:border-primary w-full">
                       <SelectValue placeholder="Select a position" />
                     </SelectTrigger>
@@ -1195,7 +1263,12 @@ const Career = () => {
                   >
                     Years of Experience
                   </Label>
-                  <Select>
+                  <Select
+                    value={formData.experience}
+                    onValueChange={(e) =>
+                      setFormData({ ...formData, experience: e })
+                    }
+                  >
                     <SelectTrigger className="mt-2 border-2 border-border focus:border-primary w-full">
                       <SelectValue placeholder="Select experience level" />
                     </SelectTrigger>
@@ -1209,7 +1282,7 @@ const Career = () => {
                   </Select>
                 </div>
 
-                <div>
+                {/* <div>
                   <Label
                     htmlFor="resume"
                     className="font-body font-medium text-charcoal"
@@ -1236,7 +1309,7 @@ const Career = () => {
                       No file chosen
                     </span>
                   </div>
-                </div>
+                </div> */}
 
                 <div>
                   <Label
@@ -1248,6 +1321,10 @@ const Career = () => {
                   <Textarea
                     id="coverLetter"
                     placeholder="Tell us why you're interested in joining our team..."
+                    value={formData.coverLetter}
+                        onChange={(e) =>
+                          setFormData({ ...formData, coverLetter: e.target.value })
+                        }
                     className="mt-2 border-2 border-border focus:border-primary min-h-32"
                   />
                 </div>
