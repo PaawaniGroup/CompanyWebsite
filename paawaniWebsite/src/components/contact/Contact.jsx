@@ -14,6 +14,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    contact: "",
     subject: "",
     message: "",
   });
@@ -39,6 +40,7 @@ const Contact = () => {
         setFormData({
           name: "",
           email: "",
+          contact: "",
           subject: "",
           message: "",
         });
@@ -219,6 +221,23 @@ const Contact = () => {
                     </div>
                   </div>
 
+                  <div>
+                    <label className="font-body font-semibold text-charcoal mb-3 block">
+                      Contact Number
+                    </label>
+                    <Input
+                      type="tel"
+                      placeholder="Enter your contact number"
+                      value={formData.contact}
+                      onChange={(e) =>
+                        setFormData({ ...formData, contact: e.target.value })
+                      }
+                      required
+                      className="glass-effect border-primary/20 text-charcoal placeholder:text-muted-foreground h-12"
+                      pattern="[0-9]{10}"
+                      maxLength={10}
+                    />
+                  </div>
                   <div>
                     <label className="font-body font-semibold text-charcoal mb-3 block">
                       Subject
