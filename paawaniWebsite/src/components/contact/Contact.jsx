@@ -8,7 +8,7 @@ import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
-import { toast } from "sonner"
+import { toast } from "sonner";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,40 +19,47 @@ const Contact = () => {
   });
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "http://localhost:8000/api/send-contact-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-  try {
-    const response = await fetch("http://localhost:8000/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      toast.success("Message Sent Successfully! We will get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    } else {
-      toast.error("Failed to send message. Please try again.");
+      if (response.ok) {
+        toast.success(
+          "Message Sent Successfully! We will get back to you soon."
+        );
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending form data:", error);
+      toast.error(
+        "Failed to send message. Please check your network connection."
+      );
     }
-  } catch (error) {
-    console.error("Error sending form data:", error);
-    toast.error("Failed to send message. Please check your network connection.");
-  }
-};
+  };
 
   const contactInfo = [
     {
       id: 1,
       icon: MapPin,
       title: "Address",
-      content: "651/B, Sainik Colony Near Ganga Enclave, Roorkee, Uttarakhand Pincode - 247667",
+      content:
+        "651/B, Sainik Colony Near Ganga Enclave, Roorkee, Uttarakhand Pincode - 247667",
       color: "from-[#20ab26] to-[#1a8f21]",
     },
     {
@@ -117,9 +124,8 @@ const Contact = () => {
                   </div>
                 </div>
                 <p className="font-body text-muted-foreground text-lg leading-relaxed">
-                  Let's discuss how we can
-                  help you achieve your goals and create lasting impact in your
-                  success.
+                  Let's discuss how we can help you achieve your goals and
+                  create lasting impact in your success.
                 </p>
               </div>
             </div>
@@ -245,8 +251,9 @@ const Contact = () => {
                   </div>
 
                   <Button
-                  type="submit"
-                  className="btn-modern w-full font-body text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg group">
+                    type="submit"
+                    className="btn-modern w-full font-body text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg group"
+                  >
                     Send Message
                     <Send className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </Button>
