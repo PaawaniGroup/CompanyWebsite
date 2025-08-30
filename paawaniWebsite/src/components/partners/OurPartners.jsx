@@ -1,9 +1,9 @@
 import React from "react";
-import SectionHeader from "@/SecHeader";
-import Badge from "@/Badge";
-import { Card, CardContent } from "@/ui/card";
+import SectionHeader from "@/components/SecHeader";
+import Badge from "@/components/Badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 
 const OurPartners = () => {

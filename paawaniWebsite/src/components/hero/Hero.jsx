@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Badge from "@/badge";
+import Badge from "@/components/Badge";
 import Hero1 from "@/assets/Hero1.jpg";
 import Hero2 from "@/assets/Hero2.jpg";
 import Hero3 from "@/assets/Hero3.jpg";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 

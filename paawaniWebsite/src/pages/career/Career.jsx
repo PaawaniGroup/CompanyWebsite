@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import { companyCulture } from "@/index";
-import { companyValues } from "@/index";
-import { departments } from "@/index";
+import { companyCulture } from "./index";
+import { companyValues } from "./index";
+import { departments } from "./index";
 import SecHeader from "@/components/SecHeader";
 import Badge1 from "@/components/Badge";
 import { Button } from "@/components/ui/button";

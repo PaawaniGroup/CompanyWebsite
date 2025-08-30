@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@/ui/button";
+import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import {
   FaFacebook,
@@ -11,7 +11,7 @@ import {
   ArrowUp,
   ChevronRight,
 } from "lucide-react";
-import { Separator } from "@/ui/separator";
+import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router";
 
 const Footer = () => {

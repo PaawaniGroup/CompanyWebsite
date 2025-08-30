@@ -1,9 +1,9 @@
 import React from "react";
-import SectionHeader from "@/SecHeader";
-import Badge from "@/Badge";
+import SectionHeader from "@/components/SecHeader";
+import Badge from "@/components/Badge";
 import { Link } from "react-router-dom";
-import { Button } from "@/ui/button";
-import { Card, CardContent } from "@/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Target, Lightbulb, TrendingUp, Award } from "lucide-react";
 
