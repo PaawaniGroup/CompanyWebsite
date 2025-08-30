@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from "@/components/hero/Hero";
-import Whyus from "@/components/whyus/WhyUs"; 
+import Whyus from "@/components/whyus/WhyUsSection"; 
 import OurPartners from "@/components/partners/OurPartners";
 import Partnership from "@/components/partners/Partnership";
 import Testimonials from "@/components/testimonials/Testimonials";
