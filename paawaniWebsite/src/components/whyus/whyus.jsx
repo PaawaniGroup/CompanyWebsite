@@ -7,9 +7,9 @@ import {
   Handshake,
   ChartLine,
 } from "lucide-react";
-import SectionHeader from "../SecHeader";
-import Badge from "../Badge";
-import { Card, CardContent } from "../ui/card";
+import SectionHeader from "@/SecHeader";
+import Badge from "@/Badge";
+import { Card, CardContent } from "@/ui/card";
 import { motion } from "framer-motion";
 
 const whyus = () => {

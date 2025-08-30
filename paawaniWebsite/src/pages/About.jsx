@@ -16,10 +16,10 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
-import CTA from "../components/Cta";
-import Havells from "../assets/certificates/Havells.pdf";
-import Iso from "../assets/certificates/ISO.pdf";
-import Udyam from "../assets/certificates/UDYAM.pdf";
+import CTA from "@/components/Cta";
+import Havells from "@/assets/certificates/Havells.pdf";
+import Iso from "@/assets/certificates/ISO.pdf";
+import Udyam from "@/assets/certificates/UDYAM.pdf";
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);

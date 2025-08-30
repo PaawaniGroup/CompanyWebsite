@@ -1,15 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom"
-import Navbar from './components/navbar/Navbar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Business from './pages/business/OurBusinesses'
-import MakeMyEdu from './pages/business/MakeMyEdu'
-import Havells from './pages/business/Havells'
-import Footer from './components/footer/Footer'
-import Career from "./pages/career/Career";
-import Contact from './components/contact/Contact'
-import UnderDevelopmentPage from "./components/UnderDev";
+import Navbar from '@/components/navbar/Navbar'
+import Home from '@/pages/Home'
+import About from '@/pages/About'
+import Business from '@/pages/business/OurBusinesses'
+import MakeMyEdu from '@/pages/business/MakeMyEdu'
+import Havells from '@/pages/business/Havells'
+import Footer from '@/components/footer/Footer'
+import Career from "@/pages/career/Career";
+import Contact from '@/components/contact/Contact'
+import UnderDevelopmentPage from "@/components/UnderDev";
 import AddJobs from "@/admin/AddJobs";
 
 function App() {

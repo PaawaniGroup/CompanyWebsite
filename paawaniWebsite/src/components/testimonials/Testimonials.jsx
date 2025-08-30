@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "motion/react";
-import Badge from "../Badge";
-import SectionHeader from "../SecHeader";
-import { Card, CardContent } from "../ui/Card";
+import Badge from "@/Badge";
+import SectionHeader from "@/SecHeader";
+import { Card, CardContent } from "@/ui/Card";
 import { Star, Quote } from "lucide-react";
-import { ImageWithFallback } from '../ImageWithFallback'
+import { ImageWithFallback } from '@/ImageWithFallback'
 
 const Testimonials = () => {
   const testimonials = [

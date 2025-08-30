@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "motion/react";
-import SectionHeader from "../SecHeader";
-import Badge from "../Badge";
+import SectionHeader from "@/SecHeader";
+import Badge from "@/Badge";
 import { MapPin, Phone, Mail, Send, MessageCircle } from "lucide-react";
-import { Card, CardContent } from "../ui/card";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { Button } from "../ui/button";
+import { Card, CardContent } from "@/ui/card";
+import { Input } from "@/ui/input";
+import { Textarea } from "@/ui/textarea";
+import { Button } from "@/ui/button";
 import { toast } from "sonner";
 
 const Contact = () => {
