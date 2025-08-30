@@ -15,8 +15,12 @@ import Badge from "@/components/Badge";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Havells = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const solutions = [
     {
       id: 1,
@@ -134,15 +138,18 @@ const Havells = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="btn-modern text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300">
+                {/* <Button className="btn-modern text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300">
                   Explore Solutions
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
-                >
-                  Contact Us
-                </Button>
+                </Button> */}
+                <Link to="/contact">
+                  <Button
+                    onClick={scrollToTop}
+                    variant="outline"
+                    className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
