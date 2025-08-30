@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Badge from "@/components/Badge";
 import SectionHeader from "@/components/SecHeader";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { ImageWithFallback } from '@/components/ImageWithFallback'
 
