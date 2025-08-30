@@ -17,15 +17,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
-      with:
-        path: paawaniWebsite
         
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'paawaniWebsite/package-lock.json'
+        cache-dependency-path: './paawaniWebsite/package-lock.json'
 
     - name: Install dependencies
       run: npm install
