@@ -104,14 +104,6 @@ const Career = () => {
 
   const handleApply = async (e) => {
     e.preventDefault();
-    setIsModalOpen(false);
-    setSelectedJob(null);
-
-    const formElement = document.getElementById("application-form");
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: "smooth" });
-    }
-
     const data = new FormData();
     for (const key in formData) {
       if (formData[key]) {
@@ -149,6 +141,16 @@ const Career = () => {
       toast.error(
         "Failed to send message. Please check your network connection."
       );
+    }
+  };
+
+  const scrollToApply = () => {
+    setIsModalOpen(false);
+    setSelectedJob(null);
+
+    const formElement = document.getElementById("application-form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -402,7 +404,7 @@ const Career = () => {
                         </div>
                         <div className="flex flex-col sm:flex-row lg:flex-col gap-2 min-w-40">
                           <Button
-                            onClick={() => handleApply(job.id)}
+                            onClick={() => scrollToApply()}
                             className="btn-modern text-white font-body font-semibold"
                           >
                             Apply Now
@@ -459,6 +461,7 @@ const Career = () => {
                       First Name *
                     </Label>
                     <Input
+                      id="firstName"
                       name="firstName"
                       type="text"
                       value={formData.firstName}
@@ -477,6 +480,7 @@ const Career = () => {
                       Last Name *
                     </Label>
                     <Input
+                      id="lastName"
                       name="lastName"
                       type="text"
                       value={formData.lastName}
@@ -497,6 +501,7 @@ const Career = () => {
                     Email Address *
                   </Label>
                   <Input
+                    id="email"
                     name="email"
                     type="email"
                     value={formData.email}
@@ -516,6 +521,7 @@ const Career = () => {
                     Phone Number
                   </Label>
                   <Input
+                    id="phone"
                     name="phone"
                     type="tel"
                     value={formData.phone}
@@ -534,6 +540,7 @@ const Career = () => {
                     Position of Interest *
                   </Label>
                   <Select
+                    id="position"
                     name="position"
                     value={formData.position}
                     onValueChange={(e) =>
@@ -549,7 +556,9 @@ const Career = () => {
                           {job.title}
                         </SelectItem>
                       ))}
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem key="other-position" value="other">
+                        Other
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -562,6 +571,7 @@ const Career = () => {
                     Years of Experience
                   </Label>
                   <Select
+                    id="experience"
                     name="experience"
                     value={formData.experience}
                     onValueChange={(e) =>
@@ -623,6 +633,7 @@ const Career = () => {
                     Cover Letter
                   </Label>
                   <Textarea
+                    id="coverLetter"
                     name="coverLetter"
                     placeholder="Tell us why you're interested in joining our team..."
                     value={formData.coverLetter}
@@ -819,7 +830,7 @@ const Career = () => {
                 <div className="border-t border-border pt-6">
                   <div className="flex justify-center">
                     <Button
-                      onClick={() => handleApply(selectedJob.id)}
+                      onClick={() => scrollToApply()}
                       className="btn-modern text-white px-8 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300"
                     >
                       <Send className="mr-2 h-5 w-5" />
