@@ -17,6 +17,9 @@ import {
 } from "lucide-react";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import CTA from "../components/Cta";
+import Havells from "../assets/certificates/Havells.pdf";
+import Iso from "../assets/certificates/ISO.pdf";
+import Udyam from "../assets/certificates/UDYAM.pdf";
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
@@ -123,7 +126,7 @@ const About = () => {
       ],
       linkedin:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      mail: "mailto:paawanigroup@gmail.com",
+      mail: "mailto:officeadmin@paawanigroup.com",
     },
     {
       id: 2,
@@ -305,7 +308,10 @@ const About = () => {
                       Our Mission
                     </h3>
                     <p className="font-body text-muted-foreground leading-relaxed text-lg">
-                      To empower individuals and businesses with expert education guidance and innovative technology, creating tailored solutions that enrich lives and drive progress for a brighter future.
+                      To empower individuals and businesses with expert
+                      education guidance and innovative technology, creating
+                      tailored solutions that enrich lives and drive progress
+                      for a brighter future.
                     </p>
                   </div>
                 </div>
@@ -324,7 +330,9 @@ const About = () => {
                       Our Vision
                     </h3>
                     <p className="font-body text-muted-foreground leading-relaxed text-lg">
-                      To be a trusted, multifaceted leader providing a holistic ecosystem of services that simplifies complex processes and facilitates access to global opportunities.
+                      To be a trusted, multifaceted leader providing a holistic
+                      ecosystem of services that simplifies complex processes
+                      and facilitates access to global opportunities.
                     </p>
                   </div>
                 </div>
@@ -350,34 +358,34 @@ const About = () => {
                       <li className="flex items-center gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
-                          href="/certificates/certificate1.jpg"
+                          href={Havells}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
                         >
-                          ISO 9001:2015 Quality Management
+                          Havells Official Automation Partner in Uttarakhand
                         </a>
                       </li>
                       <li className="flex items-center gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
-                          href="/certificates/certificate2.jpg"
+                          href={Iso}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
                         >
-                          ISO/IEC 27001:2013 Information Security
+                          ISO 9001=2015 Quality Management System
                         </a>
                       </li>
                       <li className="flex items-center gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
-                          href="/certificates/certificate3.jpg"
+                          href={Udyam}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
                         >
-                          CMMI Level 3
+                          UDYAM Registration Certificate
                         </a>
                       </li>
                     </ul>
