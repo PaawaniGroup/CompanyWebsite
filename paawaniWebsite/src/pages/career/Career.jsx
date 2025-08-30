@@ -16,26 +16,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ArrowLeft,
   MapPin,
   Clock,
   Users,
-  DollarSign,
-  Heart,
-  Award,
-  Coffee,
-  Laptop,
-  Car,
-  Calendar,
   Send,
-  Search,
-  Filter,
-  Star,
   Briefcase,
-  TrendingUp,
-  Shield,
-  BookOpen,
-  X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -48,7 +33,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
-import { normalizeModuleId } from "vite/module-runner";
+
 
 const Career = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
@@ -130,7 +115,7 @@ const Career = () => {
           phone: "",
           position: "",
           experience: "",
-          resume: normalizeModuleId,
+          resume: null,
           coverLetter: "",
         });
       } else {

@@ -1,18 +1,14 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  ArrowLeft,
   Zap,
   Shield,
   Lightbulb,
-  Wifi,
   Home,
-  Star,
   CheckCircle,
   Phone,
   Mail,
   MapPin,
-  Award,
 } from "lucide-react";
 import SecHeader from "@/components/SecHeader";
 import Badge from "@/components/Badge";

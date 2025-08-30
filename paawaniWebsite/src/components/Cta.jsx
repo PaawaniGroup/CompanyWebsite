@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router";
-import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import PropTypes from "prop-types";
 
 const Cta = ({ title, description, btnText, path }) => {
-    
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div>
       <motion.div
@@ -25,7 +29,7 @@ const Cta = ({ title, description, btnText, path }) => {
             </p>
 
             <Link to={path}>
-              <Button className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
+              <Button onClick={scrollToTop} className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg">
                 {btnText}
               </Button>
             </Link>
@@ -34,6 +38,12 @@ const Cta = ({ title, description, btnText, path }) => {
       </motion.div>
     </div>
   );
+};
+Cta.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  btnText: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export default Cta;

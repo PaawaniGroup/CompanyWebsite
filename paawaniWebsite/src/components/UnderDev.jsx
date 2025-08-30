@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
-import { Home, Wrench } from "lucide-react";
+import { Wrench } from "lucide-react";
 
 const UnderDevelopmentPage = () => {
   return (
@@ -14,10 +14,10 @@ const UnderDevelopmentPage = () => {
           Oh Oo!
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-lg mb-8">
-          This page is currently under development. We're working hard to bring
+          This page is currently under development. We&apos;re working hard to bring
           it to you soon.
         </p>
-        <Link to="/about">
+        <Link to="/">
           <Button className="flex items-center gap-2 px-6 py-3 text-lg font-semibold rounded-full shadow-lg transition-all duration-300 hover:bg-primary-dark hover:shadow-xl">
             Go to Home
           </Button>

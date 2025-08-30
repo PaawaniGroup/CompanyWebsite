@@ -1,14 +1,10 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  ArrowLeft,
-  Users,
   Globe,
-  Award,
   Target,
   BookOpen,
   GraduationCap,
-  Star,
   CheckCircle,
   Phone,
   Mail,

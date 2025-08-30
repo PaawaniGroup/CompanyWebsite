@@ -8,24 +8,14 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
   ArrowUp,
-  Send,
   ChevronRight,
 } from "lucide-react";
 import { Separator } from "../ui/separator";
+import { Link } from "react-router";
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -168,15 +158,14 @@ const Footer = () => {
                     <ul className="space-y-3">
                       {section.links.map((link) => (
                         <li key={link.name}>
-                          <button
-                            onClick={() =>
-                              link.id ? scrollToSection(link.id) : undefined
-                            }
+                          <Link to={link.id}>
+                          <button onClick={scrollToTop}
                             className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-left group flex items-center gap-1"
                           >
                             <span>{link.name}</span>
                             <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                           </button>
+                          </Link>
                         </li>
                       ))}
                     </ul>

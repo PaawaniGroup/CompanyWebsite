@@ -1,10 +1,10 @@
 import React from "react";
 import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Target, Lightbulb, TrendingUp, Award } from "lucide-react";
 
 const Partnership = () => {
@@ -56,6 +56,10 @@ const Partnership = () => {
       features: ["Co-development", "Technical integration", "Joint marketing"],
     },
   ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <section id="partner" className="py-30 bg-accent relative overflow-hidden">
@@ -112,7 +116,7 @@ const Partnership = () => {
                 ))}
               </div>
               <Link to="/contact">
-                <Button className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5">
+                <Button onClick={scrollToTop} className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5">
                   Start Your Partnership Journey
                 </Button>
               </Link>

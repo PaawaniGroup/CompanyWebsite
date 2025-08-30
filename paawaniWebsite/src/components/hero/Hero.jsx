@@ -1,19 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Badge from "../badge";
 import Hero1 from "../../assets/Hero1.jpg";
 import Hero2 from "../../assets/Hero2.jpg";
 import Hero3 from "../../assets/Hero3.jpg";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router";
-
+import { Link } from "react-router-dom";
 
 const hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
 
   const slides = [
     {
@@ -45,19 +43,15 @@ const hero = () => {
     },
   ];
 
-
   useEffect(() => {
     if (!isAutoPlaying) return;
-
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000); //it will change slide in every 5 seconds
 
-
     return () => clearInterval(interval);
   }, [isAutoPlaying, slides.length]);
-
 
   // const stats = [
   //   {
@@ -77,59 +71,17 @@ const hero = () => {
   //   },
   // ];
 
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
-
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-
   const goToSlide = (index) => {
     setCurrentSlide(index);
   };
-
-
-  //Slides Background
-  // const getBackgroundTexture = (texture) => {
-  //   switch (texture) {
-  //     case "geometric":
-  //       return {
-  //         backgroundImage: `linear-gradient(30deg, rgba(32, 171, 38, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(32, 171, 38, 0.15) 87.5%, rgba(32, 171, 38, 0.15)),
-  //           linear-gradient(150deg, rgba(32, 171, 38, 0.15) 12%, transparent 12.5%, transparent 87%, rgba(32, 171, 38, 0.15) 87.5%, rgba(32, 171, 38, 0.15)),
-  //           linear-gradient(30deg, rgba(32, 171, 38, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(32, 171, 38, 0.1) 87.5%, rgba(32, 171, 38, 0.1)),
-  //           linear-gradient(150deg, rgba(32, 171, 38, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(32, 171, 38, 0.1) 87.5%, rgba(32, 171, 38, 0.1))
-  //         `,
-  //         backgroundSize: "60px 60px, 60px 60px, 30px 30px, 30px 30px",
-  //         backgroundPosition: "0 0, 0 0, 15px 15px, 15px 15px",
-  //       }
-  //     case "circuit":
-  //       return {
-  //         backgroundImage: `radial-gradient(circle at 25% 25%, rgba(32, 171, 38, 0.2) 2px, transparent 2px),
-  //           radial-gradient(circle at 75% 75%, rgba(32, 171, 38, 0.15) 1px, transparent 1px),
-  //           linear-gradient(0deg, transparent 24%, rgba(32, 171, 38, 0.1) 25%, rgba(32, 171, 38, 0.1) 26%, transparent 27%, transparent 74%, rgba(32, 171, 38, 0.1) 75%, rgba(32, 171, 38, 0.1) 76%, transparent 77%, transparent),
-  //           linear-gradient(90deg, transparent 24%, rgba(32, 171, 38, 0.1) 25%, rgba(32, 171, 38, 0.1) 26%, transparent 27%, transparent 74%, rgba(32, 171, 38, 0.1) 75%, rgba(32, 171, 38, 0.1) 76%, transparent 77%, transparent)
-  //         `,
-  //         backgroundSize: "50px 50px, 100px 100px, 50px 50px, 50px 50px",
-  //       }
-  //     case "hexagon":
-  //       return {
-  //         backgroundImage: `radial-gradient(circle at 50% 0%, rgba(32, 171, 38, 0.2) 10px, transparent 11px),
-  //           radial-gradient(circle at 50% 100%, rgba(32, 171, 38, 0.15) 8px, transparent 9px),
-  //           linear-gradient(60deg, rgba(32, 171, 38, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(32, 171, 38, 0.1) 75.5%),
-  //           linear-gradient(-60deg, rgba(32, 171, 38, 0.1) 25%, transparent 25.5%, transparent 75%, rgba(32, 171, 38, 0.1) 75.5%)
-  //         `,
-  //         backgroundSize: "80px 140px, 80px 140px, 80px 140px, 80px 140px",
-  //         backgroundPosition: "0 0, 0 0, 0 0, 0 0",
-  //       }
-  //     default:
-  //       return {}
-  //   }
-  // };
-
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -137,15 +89,6 @@ const hero = () => {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-
-  const scrollToAbout = () => {
-    const element = document.getElementById("about");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
 
   return (
     <section
@@ -157,7 +100,6 @@ const hero = () => {
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl"></div>
       <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-primary/4 rounded-full blur-3xl"></div>
-
 
       {/* Navigation Controls */}
       <div className="absolute top-1/3 lg:top-1/2 left-4 right-4 z-20 flex justify-between items-center pointer-events-none">
@@ -178,7 +120,6 @@ const hero = () => {
           <ChevronRight className="h-6 w-6" />
         </Button>
       </div>
-
 
       {/* Slide Indicator */}
       <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
@@ -230,7 +171,6 @@ const hero = () => {
         </div>
       </div>
 
-
       {/* Slides */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -267,7 +207,6 @@ const hero = () => {
             }}
           ></motion.div>
 
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pb-16 sm:pb-20 lg:pb-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)]">
               {/* Left Side */}
@@ -295,7 +234,6 @@ const hero = () => {
                     const isHighlight = highlightWords.some((hw) =>
                       word.includes(hw.replace(":", ""))
                     );
-
 
                     return (
                       <span
@@ -335,7 +273,6 @@ const hero = () => {
                   <Link to={slides[currentSlide].link}>
                     <Button
                       variant="outline"
-                      onClick={scrollToAbout}
                       className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 group"
                     >
                       Learn More
@@ -362,7 +299,6 @@ const hero = () => {
                 </motion.div> */}
               </motion.div>
 
-
               {/* Right Side */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, x: 50 }}
@@ -388,11 +324,9 @@ const hero = () => {
                       ></div> */}
                     </div>
 
-
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 gradient-overlay-green-light"></div>
                   </div>
-
 
                   {/* Floating Elements */}
                   <motion.div
@@ -420,7 +354,6 @@ const hero = () => {
                     className="absolute -bottom-8 -right-8 w-32 h-32 bg-gradient-to-br from-primary/15 to-[#1a8f21]/15 rounded-3xl blur-xl"
                   />
 
-
                   {/* Decorative dots */}
                   <div className="absolute top-1/4 -right-4 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
                   <div className="absolute bottom-1/3 -left-4 w-2 h-2 bg-primary/60 rounded-full animate-ping"></div>
@@ -428,7 +361,6 @@ const hero = () => {
               </motion.div>
             </div>
           </div>
-
 
           {/* Slide Progress Bar */}
           <div className="absolute bottom-0 left-0 w-full h-1 bg-border/50">
@@ -445,7 +377,6 @@ const hero = () => {
           </div>
         </motion.div>
       </AnimatePresence>
-
 
       {/* Decorative Elements */}
       <div className="absolute top-1/4 right-10 w-4 h-4 bg-primary/30 rounded-full animate-ping"></div>

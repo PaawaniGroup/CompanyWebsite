@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Badge from "@/components/Badge";
 import SectionHeader from "@/components/SecHeader";
 import { Button } from "@/components/ui/button";
@@ -24,13 +24,6 @@ import Udyam from "../assets/certificates/UDYAM.pdf";
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const images = [
     {
@@ -64,7 +57,7 @@ const About = () => {
     setCurrentImageSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const goToImageSlide = (number) => {
+  const goToImageSlide = (index) => {
     setCurrentImageSlide(index);
   };
 
@@ -510,7 +503,7 @@ const About = () => {
                     </div>
 
                     <div className="flex items-center gap-4">
-                      <a href={team.linkedin} target="_blank">
+                      <a href={team.linkedin} target="_blank" rel="noopener noreferrer">
                         <Button
                           vairant="outline"
                           size="sm"
@@ -520,7 +513,7 @@ const About = () => {
                         </Button>
                       </a>
 
-                      <a href={team.mail} target="_blank">
+                      <a href={team.mail} target="_blank" rel="noopener noreferrer">
                         <Button
                           vairant="outline"
                           size="sm"
@@ -542,7 +535,7 @@ const About = () => {
           title="Ready to Transform Your Business?"
           description="Join hundreds of successful companies that have partnered with us to achieve exceptional growth and innovation."
           btnText="Get Started Today"
-          path="/"
+          path="/contact"
         />
       </div>
     </section>

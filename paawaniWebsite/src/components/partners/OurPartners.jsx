@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
 import { Card, CardContent } from "../ui/card";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ExternalLink } from "lucide-react";
 

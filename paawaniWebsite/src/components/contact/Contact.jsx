@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Send, MessageCircle } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
@@ -121,12 +121,12 @@ const Contact = () => {
                       Get In Touch
                     </h3>
                     <p className="font-body text-muted-foreground">
-                      We're here to help
+                      We&apos;re here to help
                     </p>
                   </div>
                 </div>
                 <p className="font-body text-muted-foreground text-lg leading-relaxed">
-                  Let's discuss how we can help you achieve your goals and
+                  Let&apos;s discuss how we can help you achieve your goals and
                   create lasting impact in your success.
                 </p>
               </div>
@@ -183,7 +183,7 @@ const Contact = () => {
                     Send us a Message
                   </h3>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Fill out the form below and we'll get back to you within 24
+                    Fill out the form below and we&apos;ll get back to you within 24
                     hours.
                   </p>
                 </div>

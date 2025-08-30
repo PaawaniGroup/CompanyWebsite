@@ -1,6 +1,6 @@
 import React from 'react'
-import { motion } from "motion/react";
-
+import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 const SecHeader = ({title, highlighted, description, badge}) => {
   return (
@@ -26,5 +26,12 @@ const SecHeader = ({title, highlighted, description, badge}) => {
     </div>
   )
 }
+
+SecHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  highlighted: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  badge: PropTypes.node, // badge can be any renderable type (string, element, etc.)
+};
 
 export default SecHeader

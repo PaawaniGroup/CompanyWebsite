@@ -14,6 +14,10 @@ const Navbar = () => {
     { name: "Be Our Partner", id: "partner", link: "/contact" },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -66,6 +70,7 @@ const Navbar = () => {
                   key={item.id}
                   to={item.link}
                   className="nav-item font-body text-charcoal hover:text-primary px-4 py-2 text-base font-medium transition-all duration-300 relative group"
+                  onClick={scrollToTop}
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-[#1a8f21] transition-all duration-300 group-hover:w-full"></span>
@@ -73,7 +78,8 @@ const Navbar = () => {
               ))}
             </div>
             <Link to="/contact">
-              <Button className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300">
+              <Button onClick={scrollToTop}
+              className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300">
                 Contact Us
               </Button>
             </Link>

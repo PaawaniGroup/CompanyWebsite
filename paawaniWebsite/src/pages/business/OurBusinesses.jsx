@@ -34,6 +34,10 @@ const OurBusinesses = () => {
       color: "from-[#1a8f21] to-[#16a085]",
     },
   ];
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -105,7 +109,7 @@ const OurBusinesses = () => {
 
                     <div className="flex items-center justify-between pt-6">
                       <Link to={item.link}>
-                        <Button
+                        <Button onClick={scrollToTop}
                           variant="outline"
                           className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 x-6 py-3 rounded-full font-semibold"
                         >

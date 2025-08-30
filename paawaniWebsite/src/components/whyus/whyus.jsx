@@ -10,7 +10,7 @@ import {
 import SectionHeader from "../SecHeader";
 import Badge from "../Badge";
 import { Card, CardContent } from "../ui/card";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const whyus = () => {
   const cards = [
@@ -59,7 +59,7 @@ const whyus = () => {
   ];
 
   return (
-    <section className="py-30 bg-gradient-to-b from-accent to-background relative overflow-hidden">
+    <section className="py-30 bg-accent relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-texture-grid opacity-30"></div>
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>

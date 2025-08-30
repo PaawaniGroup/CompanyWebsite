@@ -1,24 +1,14 @@
 import {
-  ArrowLeft,
-  MapPin,
-  Clock,
   Users,
   DollarSign,
   Heart,
   Award,
   Coffee,
-  Laptop,
   Car,
   Calendar,
-  Send,
-  Search,
-  Filter,
-  Star,
-  Briefcase,
   TrendingUp,
   Shield,
   BookOpen,
-  X,
 } from "lucide-react";
 
 export const departments = [
