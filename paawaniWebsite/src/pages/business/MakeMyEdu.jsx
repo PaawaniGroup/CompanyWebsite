@@ -76,18 +76,18 @@ const MakeMyEdu = () => {
     },
   ];
 
-  const partners = [
-    "Harvard University",
-    "MIT",
-    "Stanford University",
-    "Oxford University",
-    "Cambridge University",
-    "Yale University",
-    "Princeton University",
-    "ETH Zurich",
-    "University of Toronto",
-    "Australian National University",
-  ];
+  // const partners = [
+  //   "Harvard University",
+  //   "MIT",
+  //   "Stanford University",
+  //   "Oxford University",
+  //   "Cambridge University",
+  //   "Yale University",
+  //   "Princeton University",
+  //   "ETH Zurich",
+  //   "University of Toronto",
+  //   "Australian National University",
+  // ];
 
   return (
     <div className="min-h-screen bg-background">

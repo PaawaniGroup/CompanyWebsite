@@ -39,23 +39,23 @@ const Partnership = () => {
     },
   ];
 
-  const opportunities = [
-    {
-      type: "Strategic Alliance",
-      description: "Long-term partnerships for market expansion and innovation",
-      features: ["Joint ventures", "Technology sharing", "Market access"],
-    },
-    {
-      type: "Distribution Partner",
-      description: "Exclusive or regional distribution arrangements",
-      features: ["Product distribution", "Sales support", "Training programs"],
-    },
-    {
-      type: "Solution Partner",
-      description: "Collaborative solution development and delivery",
-      features: ["Co-development", "Technical integration", "Joint marketing"],
-    },
-  ];
+  // const opportunities = [
+  //   {
+  //     type: "Strategic Alliance",
+  //     description: "Long-term partnerships for market expansion and innovation",
+  //     features: ["Joint ventures", "Technology sharing", "Market access"],
+  //   },
+  //   {
+  //     type: "Distribution Partner",
+  //     description: "Exclusive or regional distribution arrangements",
+  //     features: ["Product distribution", "Sales support", "Training programs"],
+  //   },
+  //   {
+  //     type: "Solution Partner",
+  //     description: "Collaborative solution development and delivery",
+  //     features: ["Co-development", "Technical integration", "Joint marketing"],
+  //   },
+  // ];
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

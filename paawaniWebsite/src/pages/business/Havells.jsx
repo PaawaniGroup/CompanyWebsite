@@ -5,7 +5,6 @@ import {
   Shield,
   Lightbulb,
   Home,
-  CheckCircle,
   Phone,
   Mail,
   MapPin,
