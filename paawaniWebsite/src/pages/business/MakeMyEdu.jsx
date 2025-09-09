@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  Globe,
-  Target,
+  UserCheck,
+  Brain,
   BookOpen,
-  GraduationCap,
+  Wallet,
   CheckCircle,
   Phone,
   Mail,
@@ -25,53 +25,53 @@ const MakeMyEdu = () => {
     {
       id: 1,
       icon: BookOpen,
-      title: "University Admissions",
+      title: "Schools & College Admissions",
       description:
-        "Expert guidance for undergraduate and graduate admissions to top universities worldwide.",
+        "Expert guidance and comprehensive support for admissions to educational institutions in India and abroad.",
       features: [
-        "Application Strategy",
-        "Document Preparation",
-        "Interview Coaching",
-        "Scholarship Assistance",
+        "Smart Search & Filters",
+        "Application & Deadline Tracker",
+        "Document Management",
+        "AI-Powered Recommendations",
       ],
     },
     {
       id: 2,
-      icon: GraduationCap,
-      title: "Career Counseling",
+      icon: UserCheck,
+      title: "Personalized Career Counseling",
       description:
-        "Comprehensive career guidance to help students choose the right educational path.",
+        "One-on-one counseling with dedicated experts to help students on their academic journey.",
       features: [
-        "Aptitude Testing",
-        "Career Mapping",
-        "Industry Insights",
-        "Professional Mentoring",
+        "1:1 Counseling Sessions",
+        "AI Psychometric Test",
+        "Profile Building",
+        "Live Webinars & Events",
       ],
     },
     {
       id: 3,
-      icon: Globe,
-      title: "Study Abroad Programs",
+      icon: Wallet,
+      title: "Financial & Logistical Support",
       description:
-        "Complete support for international education including visa assistance and accommodation.",
+        "Essential guidance for managing all aspects of the admission journey, including financial and travel needs.",
       features: [
-        "Visa Processing",
-        "Accommodation Support",
-        "Pre-departure Training",
-        "Alumni Network",
+        "Scholarship & Loan Guidance",
+        "Visa Assistance",
+        "Accommodation Search",
+        "Travel Insurance & Booking",
       ],
     },
     {
       id: 4,
-      icon: Target,
-      title: "Test Preparation",
+      icon: Brain,
+      title: "AI-Powered Tools",
       description:
-        "Intensive coaching for IELTS, TOEFL, GRE, GMAT, and other standardized tests.",
+        "Utilize innovative AI tools to get personalized insights and simplify key parts of the application process.",
       features: [
-        "Expert Faculty",
-        "Mock Tests",
-        "Personalized Study Plans",
-        "Score Improvement",
+        "Admission Prediction",
+        "Scholarship Matching",
+        "Document Generator (SOP, LOR, Resume)",
+        "Application Tracker with Timeline",
       ],
     },
   ];
@@ -213,7 +213,19 @@ const MakeMyEdu = () => {
             description="We have partnerships with leading universities and institutions worldwide."
           />
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="bg-primary/10 w-[50%] block mx-auto rounded-4xl">
+            <div className="p-10 flex flex-col items-center">
+              <h1 className="text-black/70 font-heading text-2xl text-center font-bold mb-5">
+                Ready to expand your reach and meet your enrollment goals?
+              </h1>
+              <Link to="/contact">
+                <Button className="text-xl font-semibold bg-primary py-2 px-4 rounded-full text-white font-heading" onClick={scrollToTop}>
+                  Partner with us
+                </Button>
+              </Link>
+            </div>
+          </div>
+          {/* <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {partners.map((partner) => (
               <motion.div
                 key={partner.id}
@@ -228,7 +240,7 @@ const MakeMyEdu = () => {
                 </span>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -260,7 +272,7 @@ const MakeMyEdu = () => {
                       Call Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      +91 749829384
+                      +91 7302983393
                     </div>
                   </div>
                 </div>
@@ -274,7 +286,7 @@ const MakeMyEdu = () => {
                       Mail Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      info@makemyeducation.com
+                      contact@makemyeducation.com
                     </div>
                   </div>
                 </div>
@@ -288,7 +300,7 @@ const MakeMyEdu = () => {
                       Visit Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      123 Education Street, Academic City
+                      651/B, Sainik Colony Near Ganga Enclave, Roorkee, Uttarakhand Pincode - 247667
                     </div>
                   </div>
                 </div>

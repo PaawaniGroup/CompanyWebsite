@@ -12,7 +12,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 const AddJobs = () => {
-  // State to manage form data
   const [formData, setFormData] = useState({
     title: "",
     department: "",
@@ -20,17 +19,16 @@ const AddJobs = () => {
     type: "",
     experience: "",
     description: "",
-    requirements: "", // Changed to string
-    benefits: "", // Changed to string
-    responsibilities: "", // Changed to string
-    qualifications: "", // Changed to string
+    requirements: "",
+    benefits: "",
+    responsibilities: "",
+    qualifications: "",
     companyDescription: "",
-    workingConditions: "", // Changed to string
+    workingConditions: "",
     featured: false,
     postedAt: "",
   });
 
-  // State to handle loading and messages
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
@@ -44,7 +42,6 @@ const AddJobs = () => {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);

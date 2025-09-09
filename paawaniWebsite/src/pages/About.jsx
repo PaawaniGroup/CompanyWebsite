@@ -20,6 +20,10 @@ import CTA from "@/components/Cta";
 import Havells from "@/assets/certificates/Havells.pdf";
 import Iso from "@/assets/certificates/ISO.pdf";
 import Udyam from "@/assets/certificates/UDYAM.pdf";
+import AmitSir from "@/assets/1.svg";
+import Shobha from "@/assets/2.svg";
+import Abhi from "@/assets/3.svg";
+import Geet from "@/assets/4.svg";
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
@@ -109,63 +113,60 @@ const About = () => {
       id: 1,
       name: "Shobha Singh",
       position: "Partner",
-      bio: "With over 20 years of experience in business development and strategic planning, Rajesh has led Paawani Group to become a recognized leader in multiple industries.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      achievements: [
-        "Harvard Business School Alumni",
-        "Industry Leader Award 2023",
-        "Forbes 40 Under 40",
-      ],
+      bio: "Our founder, Mrs. Shobha Singh, envisioned an ongoing, self-directed learning experience for students. Her goal was to cultivate a generation of thinkers who could approach challenges critically and creatively. This vision extends beyond the classroom. She believed that education should empower individuals to provide competent and compassionate services.",
+      image: Shobha,
+      // achievements: [
+      //   "Harvard Business School Alumni",
+      //   "Industry Leader Award 2023",
+      //   "Forbes 40 Under 40",
+      // ],
       linkedin:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:officeadmin@paawanigroup.com",
     },
     {
       id: 2,
       name: "Geetanjali Singh",
       position: "Chairman",
-      bio: "Priya brings extensive expertise in operations management and business strategy, ensuring seamless execution of our global initiatives.",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      achievements: [
-        "MIT Sloan Graduate",
-        "Operations Excellence Award",
-        "Women in Business Leader",
-      ],
+      bio: "As the visionary chairman of Paawani Group, Geetanjali Singh is a forward-thinking leader with a strong background in both education and corporate strategy. Her hands-on experience as a teacher and her time as a director at Zigyan Education have shaped her vision for creating impactful, student-focused initiatives like MakeMyEducation.",
+      image: Geet,
+      // achievements: [
+      //   "MIT Sloan Graduate",
+      //   "Operations Excellence Award",
+      //   "Women in Business Leader",
+      // ],
       linkedin:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:geetanjali@paawanigroup.com",
     },
     {
       id: 3,
       name: "Abhishek Singh",
       position: "Chief Technology Analyst",
-      bio: "David leads our technology initiatives and digital transformation efforts, driving innovation across all business verticals.",
-      image: "https://i.ytimg.com/vi/ZcZM2dDt7aQ/maxresdefault.jpg",
-      achievements: [
-        "Stanford Computer Science PhD",
-        "Tech Innovation Award",
-        "AI Pioneer Recognition",
-      ],
+      bio: "Mr. Abhishek Singh serves as the Technical Consultant for Paawani Group, guiding the technological vision and architecture for projects such as MakeMyEducation. He holds a Bachelor of Technology (B.Tech) degree in Computer Science from a reputed institute in India",
+      image: Abhi,
+      // achievements: [
+      //   "Stanford Computer Science PhD",
+      //   "Tech Innovation Award",
+      //   "AI Pioneer Recognition",
+      // ],
       linkedin:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:abhishek@paawanigroup.com",
     },
     {
       id: 4,
       name: "Amit Singh",
       position: "Chief Financial Officer",
-      bio: "Sarah oversees our financial strategy and risk management, ensuring sustainable growth and profitability across all ventures.",
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
-      achievements: [
-        "CPA Certified",
-        "Finance Leader Award",
-        "Wharton MBA Graduate",
-      ],
+      bio: "Mr. Amit Singh serves as the Financial Consultant for Paawani Group, bringing with him a robust professional background as a Chartered Accountant. His expertise in financial planning, accounting, and compliance plays a critical role in ensuring that the group’s financial operations",
+      image: AmitSir,
+      // achievements: [
+      //   "CPA Certified",
+      //   "Finance Leader Award",
+      //   "Wharton MBA Graduate",
+      // ],
       linkedin:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+        "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:amit@paawanigroup.com",
     },
   ];
@@ -440,7 +441,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-24 mx-30"
         >
           <div className="text-center mb-16">
             <h3 className="font-heading text-4xl font-bold text-charcoal mb-4">
@@ -462,7 +463,7 @@ const About = () => {
               >
                 <Card className="modern-card border-0 overflow-hidden bg-texture-wave hover:-translate-y-2 transition-all duration-300">
                   <div className="relative">
-                    <div className="h-80 overflow-hidden">
+                    <div className="h-120 overflow-hidden">
                       <ImageWithFallback
                         src={team.image}
                         alt={team.name}
@@ -480,12 +481,15 @@ const About = () => {
                     </div>
                   </div>
                   <CardContent className="p-8">
-                    <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                    <p
+                      className="font-body text-muted-foreground leading-relaxed mb-6"
+                      style={{ textAlign: "justify" }}
+                    >
                       {team.bio}
                     </p>
 
                     {/* Achievements */}
-                    <div className="mb-6">
+                    {/* <div className="mb-6">
                       <h5 className="font-heading font-semibold text-charcoal mb-3">
                         Key Achievements
                       </h5>
@@ -500,10 +504,14 @@ const About = () => {
                           </li>
                         ))}
                       </ul>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-center gap-4">
-                      <a href={team.linkedin} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={team.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           vairant="outline"
                           size="sm"
@@ -513,7 +521,11 @@ const About = () => {
                         </Button>
                       </a>
 
-                      <a href={team.mail} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={team.mail}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Button
                           vairant="outline"
                           size="sm"

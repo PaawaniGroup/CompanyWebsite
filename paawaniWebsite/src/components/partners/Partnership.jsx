@@ -162,7 +162,7 @@ const Partnership = () => {
         </div>
 
         {/* Partnership Opportunities */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -170,9 +170,9 @@ const Partnership = () => {
           className="glass-effect rounded-3xl p-16 shadow-2xl bg-teture-wave relative overflow-hidden"
         >
           <div className="absolute inset-0 gradient-overlay-green-light" />
-          <div className="relative z-10">
+          <div className="relative z-10"> */}
             {/* Subsection Header */}
-            <div className="text-center mb-16">
+            {/* <div className="text-center mb-16">
               <h3 className="font-heading text-4xl font-bold text-charcoal mb-6">
                 Partnership Opportunities
               </h3>
@@ -180,10 +180,10 @@ const Partnership = () => {
                 We offer various partnership models tailored to meet different
                 business needs and objectives.
               </p>
-            </div>
+            </div> */}
 
             {/* Content grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {opportunities.map((opportunities, index) => (
                 <motion.div
                   key={opportunities.type}
@@ -214,7 +214,7 @@ const Partnership = () => {
               ))}
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Decorative Elements */}

@@ -8,6 +8,8 @@ import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
+import havells from "@/assets/havells.jpg";
+import mme from "@/assets/mme.png";
 
 const OurBusinesses = () => {
   const businesses = [
@@ -16,8 +18,7 @@ const OurBusinesses = () => {
       name: "MakeMyEducation",
       description:
         "Empowering students worldwide with comprehensive educational consulting, admissions guidance, and global learning opportunities.",
-      image:
-        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&h=300&fit=crop",
+      image: mme,
       link: "/business/mme",
       category: "Education",
       color: "from-[#20ab26] to-[#1a8f21]",
@@ -27,14 +28,13 @@ const OurBusinesses = () => {
       name: "Havells Partnership",
       description:
         "Strategic alliance delivering cutting-edge electrical solutions, smart home automation, and energy-efficient technologies.",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      image: havells,
       link: "/business/havells",
       category: "Technology",
       color: "from-[#1a8f21] to-[#16a085]",
     },
   ];
-  
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -109,11 +109,12 @@ const OurBusinesses = () => {
 
                     <div className="flex items-center justify-between pt-6">
                       <Link to={item.link}>
-                        <Button onClick={scrollToTop}
+                        <Button
+                          onClick={scrollToTop}
                           variant="outline"
                           className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 x-6 py-3 rounded-full font-semibold"
                         >
-                          Learn More  
+                          Learn More
                         </Button>
                       </Link>
 

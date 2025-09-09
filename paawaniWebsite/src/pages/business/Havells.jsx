@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import cta from "@/assets/havells-cta.png"
 
 const Havells = () => {
   const scrollToTop = () => {
@@ -28,12 +29,12 @@ const Havells = () => {
       title: "Smart Lighting Solutions",
       description:
         "Energy-efficient LED lighting systems with smart controls and automation capabilities.",
-      features: [
-        "LED Technology",
-        "Smart Controls",
-        "Energy Saving",
-        "Remote Management",
-      ],
+      // features: [
+      //   "LED Technology",
+      //   "Smart Controls",
+      //   "Energy Saving",
+      //   "Remote Management",
+      // ],
     },
     {
       id: 2,
@@ -41,12 +42,12 @@ const Havells = () => {
       title: "Home Automation",
       description:
         "Complete smart home solutions for modern living with integrated IoT devices.",
-      features: [
-        "Voice Control",
-        "Mobile App",
-        "Security Integration",
-        "Energy Monitoring",
-      ],
+      // features: [
+      //   "Voice Control",
+      //   "Mobile App",
+      //   "Security Integration",
+      //   "Energy Monitoring",
+      // ],
     },
     {
       id: 3,
@@ -54,12 +55,12 @@ const Havells = () => {
       title: "Electrical Infrastructure",
       description:
         "Comprehensive electrical solutions for residential, commercial, and industrial applications.",
-      features: [
-        "Switchgear",
-        "Distribution Boards",
-        "Circuit Protection",
-        "Power Management",
-      ],
+      // features: [
+      //   "Switchgear",
+      //   "Distribution Boards",
+      //   "Circuit Protection",
+      //   "Power Management",
+      // ],
     },
     {
       id: 4,
@@ -67,12 +68,12 @@ const Havells = () => {
       title: "Safety & Protection",
       description:
         "Advanced safety systems and protective devices for electrical installations.",
-      features: [
-        "RCBO Technology",
-        "Surge Protection",
-        "Fire Safety",
-        "Emergency Systems",
-      ],
+      // features: [
+      //   "RCBO Technology",
+      //   "Surge Protection",
+      //   "Fire Safety",
+      //   "Emergency Systems",
+      // ],
     },
   ];
 
@@ -80,28 +81,28 @@ const Havells = () => {
     {
       id: 1,
       category: "Lighting",
-      name: "LED Downlights",
+      name: "Smart Lighting",
       description:
         "Premium quality LED downlights for residential and commercial spaces.",
       image:
-        "https://images.unsplash.com/photo-1675602487652-3a4d8cdada94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwZW5naW5lZXJpbmclMjBzbWFydCUyMGhvbWUlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTY3MjAxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/g/l/glamax_tw_downlighter_1.jpg",
     },
     {
       id: 2,
       category: "Automation",
-      name: "Smart Switches",
+      name: "Smart Switches and Panels",
       description:
         "Intelligent switching solutions with app control and voice commands.",
       image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        "https://havells.com/media/catalog/product/cache/2051dfe7399bbb12fcdb3313c6f79cc4/1/_/1_dot_3_20230407_black_copy_1.jpg",
     },
     {
       id: 3,
       category: "Infrastructure",
-      name: "Distribution Boards",
-      description: "Robust and reliable electrical distribution solutions.",
+      name: "IoT-enabled Appliances",
+      description: "Havells is building an ecosystem of smart products that can be controlled with their mobile app",
       image:
-        "https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop",
+        "https://www.smarthomeworld.in/wp-content/uploads/2024/04/Untitled-design-2-6-1024x576.png",
     },
   ];
 
@@ -202,7 +203,7 @@ const Havells = () => {
                       <p className="font-body text-muted-foreground mb-6 leading-relaxed">
                         {solution.description}
                       </p>
-                      <ul className="space-y-2">
+                      {/* <ul className="space-y-2">
                         {solution.features.map((feature, index) => (
                           <li key={index} className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
@@ -211,7 +212,7 @@ const Havells = () => {
                             </span>
                           </li>
                         ))}
-                      </ul>
+                      </ul> */}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -306,7 +307,7 @@ const Havells = () => {
                       Call Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      +91 749829384
+                      +91 7302983393
                     </div>
                   </div>
                 </div>
@@ -320,7 +321,7 @@ const Havells = () => {
                       Mail Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      info@makemyeducation.com
+                      contact@paawanigroup.com
                     </div>
                   </div>
                 </div>
@@ -334,7 +335,7 @@ const Havells = () => {
                       Visit Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      123 Education Street, Academic City
+                      651/B, Sainik Colony Near Ganga Enclave, Roorkee, Uttarakhand Pincode - 247667
                     </div>
                   </div>
                 </div>
@@ -349,8 +350,8 @@ const Havells = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1743327595893-f9eb22e04c01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnklMjBhY2FkZW1pYyUyMGFjaGlldmVtZW50fGVufDF8fHx8MTc1NTY3MjAwOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Graduation Ceremony"
+                  src={cta}
+                  alt="Smart Home"
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
