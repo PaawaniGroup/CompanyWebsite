@@ -22,8 +22,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const API_BASE_URL = import.meta.env.API_BASE_URL || "http://localhost:8000";
       const response = await fetch(
-        "http://localhost:8000/api/send-contact-email",
+        `${API_BASE_URL}/api/send-contact-email`,
         {
           method: "POST",
           headers: {

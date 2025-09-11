@@ -49,7 +49,8 @@ const AddJobs = () => {
     setIsError(false);
 
     try {
-      const API_ENDPOINT = "http://localhost:8000/api/admin/jobs";
+      const API_BASE_URL = import.meta.env.API_BASE_URL || "http://localhost:8000";
+      const API_ENDPOINT = `${API_BASE_URL}/api/admin/jobs`;
       
       const dataToSend = {
         ...formData,
