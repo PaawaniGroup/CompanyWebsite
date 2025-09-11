@@ -30,13 +30,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false);
-  };
+  // const scrollToSection = (sectionId) => {
+  //   const element = document.getElementById(sectionId);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: "smooth" });
+  //   }
+  //   setIsMobileMenuOpen(false);
+  // };
 
   return (
     <nav
@@ -78,8 +78,10 @@ const Navbar = () => {
               ))}
             </div>
             <Link to="/contact">
-              <Button onClick={scrollToTop}
-              className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300">
+              <Button
+                onClick={scrollToTop}
+                className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300"
+              >
                 Contact Us
               </Button>
             </Link>
@@ -107,20 +109,23 @@ const Navbar = () => {
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 glass-effect rounded-lg mt-2 border border-light-gray shadow-xl bg-texture-dots">
               {navitems.map((item) => (
-                <button
+                <Link
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  to={item.link}
+                  onClick={scrollToTop}
                   className="font-body text-charcoal hover:text-primary hover:bg-primary/5 block px-3 py-3 text-base font-medium w-full text-left rounded-md transition-all duration-300"
                 >
                   {item.name}
-                </button>
+                </Link>
               ))}
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                Contact Us
-              </Button>
+              <Link to="/contact">
+                <Button
+                  onClick={scrollToTop}
+                  className="contact-button btn-modern font-body text-white px-6 py-3 rounded-full font-medium shadow-lg hover:scale-105 transition-all duration-300"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         )}
