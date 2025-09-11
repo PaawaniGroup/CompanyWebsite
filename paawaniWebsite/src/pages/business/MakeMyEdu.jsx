@@ -213,7 +213,8 @@ const MakeMyEdu = () => {
             description="We have partnerships with leading universities and institutions worldwide."
           />
 
-          <div className="bg-primary/10 w-[50%] block mx-auto rounded-4xl">
+          {/* CTA */}
+          <div className="bg-primary/10 w-[90%] md:w-[70%] lg:w-[50%] block mx-auto rounded-4xl">
             <div className="p-10 flex flex-col items-center">
               <h1 className="text-black/70 font-heading text-2xl text-center font-bold mb-5">
                 Ready to expand your reach and meet your enrollment goals?
@@ -225,6 +226,7 @@ const MakeMyEdu = () => {
               </Link>
             </div>
           </div>
+          
           {/* <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             {partners.map((partner) => (
               <motion.div
@@ -300,7 +302,8 @@ const MakeMyEdu = () => {
                       Visit Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      651/B, Sainik Colony Near Ganga Enclave, Roorkee, Uttarakhand Pincode - 247667
+                      651/B, Sainik Colony Near Ganga Enclave, Roorkee,
+                      Uttarakhand Pincode - 247667
                     </div>
                   </div>
                 </div>
@@ -317,7 +320,7 @@ const MakeMyEdu = () => {
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1743327595893-f9eb22e04c01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFkdWF0aW9uJTIwY2VyZW1vbnklMjBhY2FkZW1pYyUyMGFjaGlldmVtZW50fGVufDF8fHx8MTc1NTY3MjAwOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                   alt="Graduation Ceremony"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-[400px] md:h-[550px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>

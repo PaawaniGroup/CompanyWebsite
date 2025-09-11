@@ -8,8 +8,8 @@ import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
-import havells from "@/assets/havells.jpg";
-import mme from "@/assets/mme.png";
+import havells from "@/assets/havells.webp";
+import mme from "@/assets/mme.webp";
 
 const OurBusinesses = () => {
   const businesses = [

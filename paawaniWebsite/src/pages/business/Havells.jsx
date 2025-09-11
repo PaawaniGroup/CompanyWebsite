@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import cta from "@/assets/havells-cta.png"
+import cta from "@/assets/havells-cta.webp"
+import hero from "@/assets/havells-hero.webp"
 
 const Havells = () => {
   const scrollToTop = () => {
@@ -161,11 +162,11 @@ const Havells = () => {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1675602487652-3a4d8cdada94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpY2FsJTIwZW5naW5lZXJpbmclMjBzbWFydCUyMGhvbWUlMjB0ZWNobm9sb2d5fGVufDF8fHx8MTc1NTY3MjAxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                  src={hero}
                   alt="Havells Automation"
                   className="w-full h-[500px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" /> */}
               </div>
             </motion.div>
           </div>
