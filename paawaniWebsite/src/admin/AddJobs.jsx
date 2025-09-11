@@ -49,7 +49,7 @@ const AddJobs = () => {
     setIsError(false);
 
     try {
-      const API_BASE_URL = import.meta.env.API_BASE_URL || "http://localhost:8000";
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       const API_ENDPOINT = `${API_BASE_URL}/api/admin/jobs`;
       
       const dataToSend = {

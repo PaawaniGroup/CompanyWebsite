@@ -57,7 +57,8 @@ const Career = () => {
   useEffect(() => {
     const fetchJobOpenings = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/jobs");
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+        const response = await fetch(`${API_BASE_URL}/api/jobs`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -97,7 +98,7 @@ const Career = () => {
     }
 
     try {
-      const API_BASE_URL = import.meta.env.API_BASE_URL || "http://localhost:8000";
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       const response = await fetch(
         `${API_BASE_URL}/api/send-career-mail`,
         {
