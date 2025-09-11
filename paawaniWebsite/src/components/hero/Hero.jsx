@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Badge from "@/components/Badge";
-import Hero1 from "@/assets/Hero1.jpg";
-import Hero2 from "@/assets/Hero2.jpg";
-import Hero3 from "@/assets/Hero3.jpg";
+import Hero1 from "@/assets/Hero1.webp";
+import Hero2 from "@/assets/Hero2.webp";
+import Hero3 from "@/assets/Hero3.webp";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -92,7 +92,7 @@ const hero = () => {
 
   return (
     <section
-      className="relative min-h-screen bg-background overflow-hidden pt-20 lg:pt-0"
+      className="relative bg-background overflow-hidden pt-20 lg:pt-10"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
@@ -115,60 +115,10 @@ const hero = () => {
           variant="outline"
           size="icon"
           onClick={nextSlide}
-          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-0 hover:opacity-100 transition-all duration-300 w-12 h-12 hidden md:flex"
+          className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg pointer-events-auto opacity-30 hover:opacity-100 transition-all duration-300 w-12 h-12 hidden md:flex"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>
-      </div>
-
-      {/* Slide Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
-        {/* Mobile Navigation Controls */}
-        <div className="flex items-center gap-4 mb-4 md:hidden justify-center">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={prevSlide}
-            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <div className="flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide
-                    ? "bg-primary shadow-lg scale-110"
-                    : "bg-white/40 hover:bg-primary/60"
-                }`}
-              />
-            ))}
-          </div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={nextSlide}
-            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-        {/* Desktop Slide Indicators */}
-        <div className="hidden md:flex gap-3">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-primary shadow-lg scale-110"
-                  : "bg-white/40 hover:bg-primary/60"
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* Slides */}
@@ -182,7 +132,7 @@ const hero = () => {
             duration: 0.8,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="relative min-h-screen flex items-center"
+          className="relative flex items-start py-10 md:py-15 lg:py-25"
         >
           {/* Dynamic Slide-specific BG Texture
           <div
@@ -206,9 +156,9 @@ const hero = () => {
               backgroundSize: "200px 200px",
             }}
           ></motion.div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pb-16 sm:pb-20 lg:pb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)]">
+          {/* min-h-[calc(100vh-8rem)] lg:min-h-[calc(100vh-10rem)] */}
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full relative z-10 pb-16 sm:pb-20 lg:pb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
               {/* Left Side */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -273,7 +223,7 @@ const hero = () => {
                   <Link to={slides[currentSlide].link}>
                     <Button
                       variant="outline"
-                      className="font-body border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 group"
+                      className="w-full font-body border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 group"
                     >
                       Learn More
                     </Button>
@@ -377,6 +327,56 @@ const hero = () => {
           </div>
         </motion.div>
       </AnimatePresence>
+
+      {/* Slide Indicator */}
+      <div className="absolute bottom-1 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
+        {/* Mobile Navigation Controls */}
+        <div className="flex items-center gap-4 mb-4 md:hidden justify-center">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={prevSlide}
+            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </Button>
+          <div className="flex gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? "bg-primary shadow-lg scale-110"
+                    : "bg-white/40 hover:bg-primary/60"
+                }`}
+              />
+            ))}
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={nextSlide}
+            className="glass-effect border-primary/20 hover:bg-primary hover:text-white shadow-lg transition-all duration-300 w-10 h-10 rounded-full"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </Button>
+        </div>
+        {/* Desktop Slide Indicators */}
+        <div className="hidden md:flex gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-primary shadow-lg scale-110"
+                  : "bg-white/40 hover:bg-primary/60"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
 
       {/* Decorative Elements */}
       <div className="absolute top-1/4 right-10 w-4 h-4 bg-primary/30 rounded-full animate-ping"></div>
