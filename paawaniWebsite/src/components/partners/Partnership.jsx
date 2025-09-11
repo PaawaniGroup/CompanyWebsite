@@ -89,7 +89,7 @@ const Partnership = () => {
           >
             {/* Left Side - Text */}
             <div className="glass-effect rounded-3xl p-10 bg-texture-noise">
-              <div className="space-y-8">
+              <div className="space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left">
                 <h3 className="font-heading text-4xl font-bold text-charcoal">
                   Why Partner with Us?
                 </h3>
@@ -100,7 +100,7 @@ const Partnership = () => {
                 </p>
               </div>
 
-              <div className="space-y-6 mt-8">
+              <div className="space-y-6 mt-8 flex flex-col items-center lg:items-start">
                 {[
                   "Tailored for Your Success",
                   "Dedicated Partner Support",
@@ -108,7 +108,7 @@ const Partnership = () => {
                   "Commitment to Your Growth",
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <div className="w-3 h-3 bg-gradient-to-r from-primary to-[#1a8f21] rounded-full" />
+                    {/* <div className="w-3 h-3 bg-gradient-to-r from-primary to-[#1a8f21] rounded-full" /> */}
                     <span className="font-body text-charcoal font-medium">
                       {item}
                     </span>
@@ -116,7 +116,7 @@ const Partnership = () => {
                 ))}
               </div>
               <Link to="/contact">
-                <Button onClick={scrollToTop} className="btn-modern font-body text-white px-10 py-4 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5">
+                <Button onClick={scrollToTop} className="btn-modern font-body text-white px-10 py-1 text-lg font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg mt-5 block mx-auto lg:inline-block lg:mx-0">
                   Start Your Partnership Journey
                 </Button>
               </Link>
