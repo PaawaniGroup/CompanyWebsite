@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Badge from "@/components/Badge";
 import SectionHeader from "@/components/SecHeader";
@@ -20,14 +20,15 @@ import CTA from "@/components/Cta";
 import Havells from "@/assets/certificates/Havells.pdf";
 import Iso from "@/assets/certificates/ISO.pdf";
 import Udyam from "@/assets/certificates/UDYAM.pdf";
-import AmitSir from "@/assets/1.svg";
-import Shobha from "@/assets/2.svg";
-import Abhi from "@/assets/3.svg";
-import Geet from "@/assets/4.svg";
+import AmitSir from "@/assets/A.webp";
+import Shobha from "@/assets/S.webp";
+import Abhi from "@/assets/AB.webp";
+import Geet from "@/assets/G.webp";
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const containerRef = useRef(null);
 
   const images = [
     {
@@ -44,8 +45,34 @@ const About = () => {
     },
   ];
 
+  // Intersection Observer for autoplay control
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        //Set Autoplay true if the component is i view
+        entries.forEach((entry) => {
+          setIsAutoPlaying(entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    //Cleanup on component unmount
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return; //Only run if in viewport
     const interval = setInterval(() => {
       setCurrentImageSlide((prev) => (prev + 1) % images.length);
     }, 3000);
@@ -120,53 +147,49 @@ const About = () => {
       //   "Industry Leader Award 2023",
       //   "Forbes 40 Under 40",
       // ],
-      linkedin:
-        "https://www.linkedin.com/company/paawanigroup",
+      linkedin: "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:officeadmin@paawanigroup.com",
     },
     {
       id: 2,
       name: "Geetanjali Singh",
       position: "Chairman",
-      bio: "As the visionary chairman of Paawani Group, Geetanjali Singh is a forward-thinking leader with a strong background in both education and corporate strategy. Her hands-on experience as a teacher and her time as a director at Zigyan Education have shaped her vision for creating impactful, student-focused initiatives like MakeMyEducation.",
+      bio: "Mrs. Geetanjali Singh, Chairman of Paawani Group, brings a unique blend of educational and managerial expertise. Her hands-on experience as a professor and her time as a director at Zigyan Education have given her deep insight into the education sector. Her strategic leadership and commitment to innovation and social responsibility drive the company's sustainable growth.",
       image: Geet,
       // achievements: [
       //   "MIT Sloan Graduate",
       //   "Operations Excellence Award",
       //   "Women in Business Leader",
       // ],
-      linkedin:
-        "https://www.linkedin.com/company/paawanigroup",
+      linkedin: "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:geetanjali@paawanigroup.com",
     },
     {
       id: 3,
       name: "Abhishek Singh",
       position: "Chief Technology Analyst",
-      bio: "Mr. Abhishek Singh serves as the Technical Consultant for Paawani Group, guiding the technological vision and architecture for projects such as MakeMyEducation. He holds a Bachelor of Technology (B.Tech) degree in Computer Science from a reputed institute in India",
+      bio: "Abhishek Singh, a technical consultant for Paawani Group and founder of InfnIITy Classes, has a strong background in tech and education. For over 13 years, he mentored thousands of students at a leading IIT-JEE coaching institute. He combines technical expertise with a passion for education, helping to shape the future of educational journey.",
       image: Abhi,
       // achievements: [
       //   "Stanford Computer Science PhD",
       //   "Tech Innovation Award",
       //   "AI Pioneer Recognition",
       // ],
-      linkedin:
-        "https://www.linkedin.com/company/paawanigroup",
+      linkedin: "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:abhishek@paawanigroup.com",
     },
     {
       id: 4,
       name: "Amit Singh",
       position: "Chief Financial Officer",
-      bio: "Mr. Amit Singh serves as the Financial Consultant for Paawani Group, bringing with him a robust professional background as a Chartered Accountant. His expertise in financial planning, accounting, and compliance plays a critical role in ensuring that the group’s financial operations",
+      bio: "Amit Singh is the Financial Consultant for Paawani Group, serving as a Chartered Accountant. He uses his expertise in financial planning and compliance to ensure precise management of the group's financial operations. His strong analytical skills are vital for guiding the financial strategic decisions of the company, ensuring its long-term growth.",
       image: AmitSir,
       // achievements: [
       //   "CPA Certified",
       //   "Finance Leader Award",
       //   "Wharton MBA Graduate",
       // ],
-      linkedin:
-        "https://www.linkedin.com/company/paawanigroup",
+      linkedin: "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:amit@paawanigroup.com",
     },
   ];
@@ -193,13 +216,14 @@ const About = () => {
 
         {/* Images Slides */}
         <motion.div
+          ref={containerRef}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           className="mb-24"
-          onMouseEnter={() => setIsAutoPlaying(false)}
-          onMouseLeave={() => setIsAutoPlaying(true)}
+          // onMouseEnter={() => setIsAutoPlaying(false)}
+          // onMouseLeave={() => setIsAutoPlaying(true)}
         >
           <div className="max-w-5xl mx-auto relative">
             {/* Main Image Container */}
@@ -226,7 +250,7 @@ const About = () => {
               </AnimatePresence>
 
               {/* Navigation Controls */}
-              <div className="absolute top-1/2 left-4 right-4 flex justify-between itesm-center pointer-events-none">
+              <div className="absolute top-1/2 left-4 right-4 flex justify-between items-center pointer-events-none">
                 <Button
                   variant="outline"
                   size="icon"
@@ -292,16 +316,16 @@ const About = () => {
             </h3>
             {/* Mission */}
             <Card className="modern-card border-0 bg-texture-noise">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <Target className="h-8 w-8 text-white" />
+              <CardContent className="p-6 sm:p-8">
+                <div className="flex items-start gap-4 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Target className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-3xl font-bold text-charcoal mb-4">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold text-charcoal mb-2 sm:mb-4">
                       Our Mission
                     </h3>
-                    <p className="font-body text-muted-foreground leading-relaxed text-lg">
+                    <p className="font-body text-muted-foreground leading-relaxed text-base sm:text-lg">
                       To empower individuals and businesses with expert
                       education guidance and innovative technology, creating
                       tailored solutions that enrich lives and drive progress
@@ -314,16 +338,16 @@ const About = () => {
 
             {/* Vision */}
             <Card className="modern-card border-0 bg-texture-wave">
-              <CardContent className="p-10">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#1a8f21] to-[#16a085] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <Eye className="h-8 w-8 text-white" />
+              <CardContent className="p-6 sm:p-10">
+                <div className="flex items-start gap-4 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#1a8f21] to-[#16a085] rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Eye className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-3xl font-bold text-charcoal mb-4">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold text-charcoal mb-2 sm:mb-4">
                       Our Vision
                     </h3>
-                    <p className="font-body text-muted-foreground leading-relaxed text-lg">
+                    <p className="font-body text-muted-foreground leading-relaxed text-base sm:text-lg">
                       To be a trusted, multifaceted leader providing a holistic
                       ecosystem of services that simplifies complex processes
                       and facilitates access to global opportunities.
@@ -335,49 +359,49 @@ const About = () => {
 
             {/* Certifications */}
             <Card className="modern-card border-0 bg-texture-noise">
-              <CardContent className="p-10">
-                <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                    <Award className="h-8 w-8 text-white" />
+              <CardContent className="p-6 sm:p-10">
+                <div className="flex items-start gap-4 sm:gap-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-primary to-[#1a8521] rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <Award className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-heading text-3xl font-bold text-charcoal mb-2">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold text-charcoal mb-2 sm:mb-4">
                       Our Certifications
                     </h3>
-                    <p className="font-body text-muted-foreground leading-relaxed text-lg mb-4">
+                    <p className="font-body text-muted-foreground leading-relaxed text-base sm:text-lg">
                       Explore our commitment to quality and excellence through
                       our official certifications.
                     </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-center gap-3">
+                    <ul className="space-y-2 sm:space-y-3">
+                      <li className="flex items-center gap-2 sm:gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
                           href={Havells}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                          className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
                         >
                           Havells Official Automation Partner in Uttarakhand
                         </a>
                       </li>
-                      <li className="flex items-center gap-3">
+                      <li className="flex items-center gap-2 sm:gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
                           href={Iso}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                          className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
                         >
                           ISO 9001=2015 Quality Management System
                         </a>
                       </li>
-                      <li className="flex items-center gap-3">
+                      <li className="flex items-center gap-2 sm:gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
                           href={Udyam}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-body text-muted-foreground text-lg hover:underline hover:text-primary transition-colors"
+                          className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
                         >
                           UDYAM Registration Certificate
                         </a>
@@ -441,18 +465,18 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-24 mx-30"
+          className="mb-24"
         >
-          <div className="text-center mb-16">
-            <h3 className="font-heading text-4xl font-bold text-charcoal mb-4">
+          <div className="text-center mb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 className="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
               Leadership Team
             </h3>
-            <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="font-body text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Our experienced leadership team brings together decades of
               expertise across diverse industries and disciplines.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {partners.map((team) => (
               <motion.div
                 key={team.id}
@@ -461,28 +485,28 @@ const About = () => {
                 transition={{ duration: 0.8, delay: team.id * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="modern-card border-0 overflow-hidden bg-texture-wave hover:-translate-y-2 transition-all duration-300">
-                  <div className="relative">
-                    <div className="h-120 overflow-hidden">
-                      <ImageWithFallback
-                        src={team.image}
-                        alt={team.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    </div>
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h4 className="font-heading text-2xl font-bold text-white mb-1">
+                <Card className="modern-card border-0 overflow-hidden bg-texture-wave hover:-translate-y-2 transition-all duration-300 flex flex-col">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    {/* <div className="h-120 overflow-hidden"> */}
+                    <ImageWithFallback
+                      src={team.image}
+                      alt={team.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    {/* </div> */}
+                    <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                      <h4 className="font-heading text-lg md:text-xl font-bold text-white mb-0.5">
                         {team.name}
                       </h4>
-                      <p className="font-body text-white/90 text-sm">
+                      <p className="font-body text-white/90 text-xs sm:text-sm">
                         {team.position}
                       </p>
                     </div>
                   </div>
-                  <CardContent className="p-8">
+                  <CardContent className="p-4 md:p-6 flex-grow">
                     <p
-                      className="font-body text-muted-foreground leading-relaxed mb-6"
+                      className="font-body text-muted-foreground leading-relaxed mb-4 text-sm md:text-base"
                       style={{ textAlign: "justify" }}
                     >
                       {team.bio}
@@ -506,7 +530,7 @@ const About = () => {
                       </ul>
                     </div> */}
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3 sm:gap-4 mt-auto">
                       <a
                         href={team.linkedin}
                         target="_blank"

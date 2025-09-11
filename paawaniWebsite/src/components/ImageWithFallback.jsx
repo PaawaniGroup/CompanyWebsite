@@ -26,6 +26,7 @@ export function ImageWithFallback({
         <img
           src={fallbackSrc}
           alt="Error loading image"
+          loading = "lazy"
           {...rest}
           data-original-url={src}
         />
