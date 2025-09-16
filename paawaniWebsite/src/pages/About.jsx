@@ -24,6 +24,11 @@ import AmitSir from "@/assets/A.webp";
 import Shobha from "@/assets/S.webp";
 import Abhi from "@/assets/AB.webp";
 import Geet from "@/assets/G.webp";
+import first from "@/assets/office/workspace.webp"
+import second from "@/assets/office/2.webp"
+import third from "@/assets/office/5.webp"
+import fourth from "@/assets/office/1.webp"
+import fifth from "@/assets/office/4.webp"
 
 const About = () => {
   const [currentImageSlide, setCurrentImageSlide] = useState(0);
@@ -33,15 +38,23 @@ const About = () => {
   const images = [
     {
       id: 1,
-      url: "https://t3.ftcdn.net/jpg/04/79/93/20/360_F_479932092_BmeQGwL1ljKI368UJVlIwczA8MtjbBnj.jpg",
+      url: first,
     },
     {
       id: 2,
-      url: "https://media.istockphoto.com/id/1362120018/photo/multi-ethnic-business-team.jpg?s=612x612&w=0&k=20&c=72pGNEMuZc2uxW7KJqv8nTafopfcY4rCd3NvDJagiHo=",
+      url: second,
     },
     {
       id: 3,
-      url: "https://media.istockphoto.com/id/1443245439/photo/business-meeting-businesswoman-woman-office-portrait-job-career-happy-businessman-teamwork.jpg?s=612x612&w=0&k=20&c=1ZR02c1UKfGdBCNWzzKlrwrVZuEiOqnAKcKF4V_t038=",
+      url: third,
+    },
+    {
+      id: 4,
+      url: fourth,
+    },
+    {
+      id: 5,
+      url: fifth,
     },
   ];
 
@@ -276,7 +289,7 @@ const About = () => {
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
                   transition={{
-                    duration: 5,
+                    duration: 3,
                     ease: "linear",
                     repeat: isAutoPlaying ? Infinity : 0,
                   }}

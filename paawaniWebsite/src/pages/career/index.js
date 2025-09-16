@@ -10,6 +10,9 @@ import {
   Shield,
   BookOpen,
 } from "lucide-react";
+import workspace from "@/assets/office/workspace.webp"
+import collab from "@/assets/office/4.webp"
+import growth from "@/assets/office/3.webp"
 
 export const departments = [
   "All",
@@ -327,19 +330,19 @@ export const jobOpenings = [
 export const companyCulture = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1629787177096-9fbe3e2ef6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjB3b3Jrc3BhY2UlMjB0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NTU4NDc0MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: workspace,
     title: "Modern workspace",
     description: "State-of-the-art facilities designed for collaboration",
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1565351167686-7a19c5114965?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG1lZXRpbmclMjBicmFpbnN0b3JtaW5nJTIwaW5ub3ZhdGlvbnxlbnwxfHx8fDE3NTU4NTYxNTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: collab,
     title: "Team collaboration",
     description: "Inclusive environment that celebrates diversity",
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1576267423429-569309b31e84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGVtcGxveWVlcyUyMHdvcmtpbmclMjB0b2dldGhlciUyMHN1Y2Nlc3N8ZW58MXx8fHwxNzU1ODU2MTU5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    url: growth,
     title: "Growth Focus",
     description: "Continuous learning and career development",
   },

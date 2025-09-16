@@ -34,7 +34,6 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 
-
 const Career = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
   const [selectedJob, setSelectedJob] = useState(null);
