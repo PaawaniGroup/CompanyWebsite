@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +30,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    scrollToTop();
+    setIsMobileMenuOpen(false);
+  }
   // const scrollToSection = (sectionId) => {
   //   const element = document.getElementById(sectionId);
   //   if (element) {
@@ -112,7 +116,7 @@ const Navbar = () => {
                 <Link
                   key={item.id}
                   to={item.link}
-                  onClick={scrollToTop}
+                  onClick={handleLinkClick}
                   className="font-body text-charcoal hover:text-primary hover:bg-primary/5 block px-3 py-3 text-base font-medium w-full text-left rounded-md transition-all duration-300"
                 >
                   {item.name}
