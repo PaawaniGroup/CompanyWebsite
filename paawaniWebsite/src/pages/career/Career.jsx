@@ -152,9 +152,9 @@ const Career = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-0">
+    <div className="min-h-screen bg-background pt-0 relative overflow-hidden">
       {/* Hero Section */}
-      <section className="py-24 bg-white/70 relative overflow-hidden">
+      <section className="py-24 bg-white/70">
         {/* BG Elements */}
         <div className="absolute inset-0 bg-texture-grid opacity-40" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
