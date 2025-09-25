@@ -117,7 +117,7 @@ const MakeMyEdu = () => {
               <p className="font-body text-xl text-muted-foreground leading-relaxed">
                 MakeMyEducation is your trusted partner in achieving academic
                 excellence.
-                <span className="block">Whether you're looking for the right program, comparing universities, or need help with accommodation, MakeMyEducation provides everything you need to confidently begin your academic career, including education loan support, comprehensive study abroad assistance, visa guidance, and 1:1 expert counseling.</span>
+                <span className="block">Whether you&apos;re looking for the right program, comparing universities, or need help with accommodation, MakeMyEducation provides everything you need to confidently begin your academic career, including education loan support, comprehensive study abroad assistance, visa guidance, and 1:1 expert counseling.</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
