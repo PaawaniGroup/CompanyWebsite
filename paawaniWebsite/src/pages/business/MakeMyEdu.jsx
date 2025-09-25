@@ -11,7 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 import SecHeader from "@/components/SecHeader";
-import Badge from "@/components/Badge";
+// import Badge from "@/components/Badge";
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from "@/components/ImageWithFallback";
 import { Card, CardContent } from "@/components/ui/card";
@@ -106,7 +106,7 @@ const MakeMyEdu = () => {
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              <Badge title="Education Excellence" />
+              {/* <Badge title="Education Excellence" /> */}
               <h1 className="font-heading text-5xl md:text-6xl font-bold text-charcoal leading-tight">
                 Empowering{" "}
                 <span className="bg-gradient-to-r from-primary to-[#1a8f21] bg-clip-text text-transparent">
@@ -116,9 +116,8 @@ const MakeMyEdu = () => {
 
               <p className="font-body text-xl text-muted-foreground leading-relaxed">
                 MakeMyEducation is your trusted partner in achieving academic
-                excellence. We provide comprehensive educational consulting
-                services to help students realize their dreams of studying at
-                world-renowned institutions.
+                excellence.
+                <span className="block">Whether you're looking for the right program, comparing universities, or need help with accommodation, MakeMyEducation provides everything you need to confidently begin your academic career, including education loan support, comprehensive study abroad assistance, visa guidance, and 1:1 expert counseling.</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -302,7 +301,7 @@ const MakeMyEdu = () => {
                       Visit Us
                     </div>
                     <div className="font-body text-muted-foreground">
-                      651/B, Sainik Colony Near Ganga Enclave, Roorkee,
+                     Ganga Enclave, Roorkee,
                       Uttarakhand Pincode - 247667
                     </div>
                   </div>

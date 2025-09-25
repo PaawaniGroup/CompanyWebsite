@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import Badge from "@/components/Badge";
-import SectionHeader from "@/components/SecHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useEffect, useState, useRef } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import Badge from "@/components/Badge"
+import SectionHeader from "@/components/SecHeader"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import {
   Target,
   Eye,
@@ -14,16 +14,18 @@ import {
   TrendingUp,
   ChevronLeft,
   ChevronRight,
-} from "lucide-react";
-import { ImageWithFallback } from "@/components/ImageWithFallback";
-import CTA from "@/components/Cta";
-import Havells from "@/assets/certificates/Havells.pdf";
-import Iso from "@/assets/certificates/ISO.pdf";
-import Udyam from "@/assets/certificates/UDYAM.pdf";
-import AmitSir from "@/assets/A.webp";
-import Shobha from "@/assets/S.webp";
-import Abhi from "@/assets/AB.webp";
-import Geet from "@/assets/G.webp";
+} from "lucide-react"
+import { ImageWithFallback } from "@/components/ImageWithFallback"
+import CTA from "@/components/Cta"
+import Havells from "@/assets/certificates/Havells.pdf"
+import Iso from "@/assets/certificates/ISO.pdf"
+import Udyam from "@/assets/certificates/UDYAM.pdf"
+import Startup from "@/assets/certificates/DPIIT.pdf"
+import AmitSir from "@/assets/A.webp"
+import Shobha from "@/assets/S.webp"
+// import Abhi from "@/assets/AB.webp";
+import Geet from "@/assets/G.webp"
+import certificate from "@/assets/STARTUP.webp"
 import first from "@/assets/office/workspace.webp"
 import second from "@/assets/office/2.webp"
 import third from "@/assets/office/5.webp"
@@ -38,22 +40,26 @@ const About = () => {
   const images = [
     {
       id: 1,
-      url: first,
+      url: certificate,
     },
     {
       id: 2,
-      url: second,
+      url: first,
     },
     {
       id: 3,
-      url: third,
+      url: second,
     },
     {
       id: 4,
-      url: fourth,
+      url: third,
     },
     {
       id: 5,
+      url: fourth,
+    },
+    {
+      id: 6,
       url: fifth,
     },
   ];
@@ -177,24 +183,24 @@ const About = () => {
       linkedin: "https://www.linkedin.com/company/paawanigroup",
       mail: "mailto:geetanjali@paawanigroup.com",
     },
-    {
-      id: 3,
-      name: "Abhishek Singh",
-      position: "Chief Technology Analyst",
-      bio: "Abhishek Singh, a technical consultant for Paawani Group and founder of InfnIITy Classes, has a strong background in tech and education. For over 13 years, he mentored thousands of students at a leading IIT-JEE coaching institute. He combines technical expertise with a passion for education, helping to shape the future of educational journey.",
-      image: Abhi,
-      // achievements: [
-      //   "Stanford Computer Science PhD",
-      //   "Tech Innovation Award",
-      //   "AI Pioneer Recognition",
-      // ],
-      linkedin: "https://www.linkedin.com/company/paawanigroup",
-      mail: "mailto:abhishek@paawanigroup.com",
-    },
+    // {
+    //   id: 3,
+    //   name: "Abhishek Singh",
+    //   position: "Chief Technology Analyst",
+    //   bio: "Abhishek Singh, a technical consultant for Paawani Group and founder of InfnIITy Classes, has a strong background in tech and education. For over 13 years, he mentored thousands of students at a leading IIT-JEE coaching institute. He combines technical expertise with a passion for education, helping to shape the future of educational journey.",
+    //   image: Abhi,
+    //   // achievements: [
+    //   //   "Stanford Computer Science PhD",
+    //   //   "Tech Innovation Award",
+    //   //   "AI Pioneer Recognition",
+    //   // ],
+    //   linkedin: "https://www.linkedin.com/company/paawanigroup",
+    //   mail: "mailto:abhishek@paawanigroup.com",
+    // },
     {
       id: 4,
       name: "Amit Singh",
-      position: "Chief Financial Officer",
+      position: "Financial Consultant",
       bio: "Amit Singh is the Financial Consultant for Paawani Group, serving as a Chartered Accountant. He uses his expertise in financial planning and compliance to ensure precise management of the group's financial operations. His strong analytical skills are vital for guiding the financial strategic decisions of the company, ensuring its long-term growth.",
       image: AmitSir,
       // achievements: [
@@ -221,9 +227,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <SectionHeader
-          title="Transforming"
-          highlighted="Business Excellence"
-          description="Paawani Group, a dynamic and forward-thinking enterprise dedicated to enriching lives and empowering progress across diverse sectors. We've established a significant presence in Uttarakhand, India, and beyond."
+          title="Your Future,"
+          highlighted="Simplified!"
+          description="Paawani Group, a DPIIT-recognized startup (Certificate No. DIPP221453), is dedicated to enriching lives and empowering progress across diverse sectors. Through our flagship product, MakeMyEducation, we offer a complete, one-stop solution for higher education admissions."
           badge={<Badge title="About Paawani Group" />}
         />
 
@@ -381,20 +387,20 @@ const About = () => {
                     <h3 className="font-heading text-2xl sm:text-3xl font-bold text-charcoal mb-2 sm:mb-4">
                       Our Certifications
                     </h3>
-                    <p className="font-body text-muted-foreground leading-relaxed text-base sm:text-lg">
+                    {/* <p className="font-body text-muted-foreground leading-relaxed text-base sm:text-md">
                       Explore our commitment to quality and excellence through
                       our official certifications.
-                    </p>
+                    </p> */}
                     <ul className="space-y-2 sm:space-y-3">
                       <li className="flex items-center gap-2 sm:gap-3">
                         <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
                         <a
-                          href={Havells}
+                          href={Startup}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
                         >
-                          Havells Official Automation Partner in Uttarakhand
+                          DPIIT Startup India Registration
                         </a>
                       </li>
                       <li className="flex items-center gap-2 sm:gap-3">
@@ -417,6 +423,17 @@ const About = () => {
                           className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
                         >
                           UDYAM Registration Certificate
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-2 sm:gap-3">
+                        <span className="inline-flex h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+                        <a
+                          href={Havells}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-body text-muted-foreground text-sm sm:text-lg hover:underline hover:text-primary transition-colors"
+                        >
+                          Havells Official Automation Partner in Uttarakhand
                         </a>
                       </li>
                     </ul>
@@ -489,7 +506,7 @@ const About = () => {
               expertise across diverse industries and disciplines.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {partners.map((team) => (
               <motion.div
                 key={team.id}
